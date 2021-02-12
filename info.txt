@@ -1,0 +1,3 @@
+name = Sprite Weapons
+author = Xorberax
+description = Sprite-based weapons!

@@ -1,2 +1,2 @@
-# teardown-mods
-A collection of my mods for Teardown.
+# Teardown Sprite-based Weapons
+A framework + mod that implements sprite-based weapons in Teardown (think Doom).
