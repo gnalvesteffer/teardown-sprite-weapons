@@ -93,6 +93,7 @@ function register_weapon(definition)
         },
         fire_rate = definition.fire_rate, -- duration in seconds between each shot
         reach = definition.reach, -- distance in meters that the weapon can reach/hit/shoot
-        impact_force = definition.impact_force -- influences the size of holes made when shooting stuff
+        impact_force = definition.impact_force, -- influences the size of holes made when shooting stuff
+        magazine_size = definition.magazine_size
     }
 end

@@ -8,8 +8,17 @@ model.get_muzzle_direction = function()
     return TransformToParentVec(GetCameraTransform(), Vec(0, 0, -1))
 end
 
-model.play_weapon_sound = function()
-    local sound = get_random_weapon_sound()
+model.get_random_weapon_state_sound = function(weapon_state)
+    local weapon_definition = get_current_weapon_definition()
+    local total_sounds = weapon_definition.states[weapon_state].total_sounds
+    if total_sounds == 0 then
+        return nil
+    end
+    return weapon_definition.states[weapon_state].sounds[math.random(1, total_sounds)]
+end
+
+model.play_weapon_sound = function(weapon_state)
+    local sound = model.get_random_weapon_state_sound(weapon_state)
     if sound ~= nil then
         PlaySound(sound)
     end
@@ -32,11 +41,14 @@ model.requires_aim_transition = function()
 end
 
 model.can_fire = function()
-    return not model.is_firing() and not model.requires_aim_transition()
+    return not model.is_firing() and not model.requires_aim_transition() and not model.is_reloading() and state.get_current_weapon().ammo > 0
 end
 
 model.fire = function()
     state.last_fire_time = GetTime()
+
+    local previous_ammo = state.get_current_weapon().ammo
+    state.get_current_weapon().ammo = math.max(previous_ammo - 1, 0)
 
     if state.weapon_state == "idle" or state.weapon_state == "fire" then
         state.set_weapon_state("fire")
@@ -47,7 +59,7 @@ model.fire = function()
     end
 
     if state.weapon_state_time == 0 then
-        model.play_weapon_sound()
+        model.play_weapon_sound("fire")
     end
 
     local weapon_definition = get_current_weapon_definition()
@@ -65,7 +77,16 @@ model.try_fire = function()
     end
 end
 
+model.is_reloading = function()
+    return state.weapon_state == "reload" and state.weapon_state_time <= get_current_weapon_definition().states["reload"].duration
+end
+
+model.can_reload = function()
+    return state.get_current_weapon().reserve_ammo > 0
+end
+
 model.tick = function(deltaTime)
+    local current_weapon = state.get_current_weapon()
     local weapon_definition = get_current_weapon_definition()
     local state_duration = weapon_definition.states[state.weapon_state].duration
 
@@ -103,6 +124,24 @@ model.tick = function(deltaTime)
                 end
             end
         end
+    end
+
+    -- handle finished reload state
+    if state.weapon_state == "reload" and state.weapon_state_time > state_duration then
+        state.set_weapon_state("idle")
+        local previous_ammo = current_weapon.ammo
+        local chambered_ammo = 0
+        if (previous_ammo > 0) then
+            chambered_ammo = 1
+        end
+        current_weapon.ammo = weapon_definition.magazine_size + chambered_ammo
+        current_weapon.reserve_ammo = math.max(current_weapon.reserve_ammo - weapon_definition.magazine_size, 0)
+    end
+
+    -- handle reload attempt
+    if state.is_attempting_reload and model.can_reload() then
+        state.set_weapon_state("reload")
+        model.play_weapon_sound("reload")
     end
     
     state.weapon_state_time = state.weapon_state_time + deltaTime

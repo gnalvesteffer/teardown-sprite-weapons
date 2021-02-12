@@ -30,10 +30,11 @@ register_weapon({
         reload = {
             total_frames = 208,
             frame_rate = 120,
-            total_sounds = 0
+            total_sounds = 1
         },
     },
     fire_rate = 0.066,
     reach = 300,
-    impact_force = 1.1
+    impact_force = 1.1,
+    magazine_size = 30
 })
