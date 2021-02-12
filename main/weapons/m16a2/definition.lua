@@ -11,8 +11,29 @@ register_weapon({
             total_frames = 12,
             frame_rate = 120,
             total_sounds = 3
-        }
+        },
+        aim = {
+            total_frames = 11,
+            frame_rate = 120,
+            total_sounds = 0
+        },
+        aimidle = {
+            total_frames = 1,
+            frame_rate = 120,
+            total_sounds = 0
+        },
+        aimfire = {
+            total_frames = 12,
+            frame_rate = 120,
+            total_sounds = 0
+        },
+        reload = {
+            total_frames = 208,
+            frame_rate = 120,
+            total_sounds = 0
+        },
     },
     fire_rate = 0.066,
-    reach = 300
+    reach = 300,
+    impact_force = 1.1
 })

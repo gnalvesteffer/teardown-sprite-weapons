@@ -9,7 +9,7 @@
 function tick(deltaTime)
     controller.tick(deltaTime)
     model.tick(deltaTime)
-    viewmodel.tick()
+    viewmodel.tick(deltaTime)
 end
 
 function draw()

@@ -20,7 +20,7 @@ model.is_firing = function()
 end
 
 model.can_fire = function()
-    return not model.is_firing() or state.weapon_state_time >= get_current_weapon_definition().fire_rate
+    return not model.is_firing() or state.weapon_state_time >= get_current_weapon_definition().fire_rate and state.weapon_state == "idle" and state.weapon_state == "aimidle"
 end
 
 model.fire = function()
@@ -29,7 +29,7 @@ model.fire = function()
     if state.weapon_state == "idle" or state.weapon_state == "fire" then
         state.set_weapon_state("fire")
     else
-        if state.weapon_state == "aim" or state.weapon_state == "aimfire" then
+        if state.weapon_state == "aimidle" or state.weapon_state == "aimfire" then
             state.set_weapon_state("aimfire")
         end
     end
@@ -39,11 +39,12 @@ model.fire = function()
     end
 
     local weapon_definition = get_current_weapon_definition()
-    Shoot(model.get_muzzle_position(), model.get_muzzle_direction())
-    --local did_hit, hit_distance = QueryRaycast(model.get_muzzle_position(), model.get_muzzle_direction(), weapon_definition.reach)
-    --if did_hit then
-    --    DebugPrint("HIT!")
-    --end
+    local muzzle_direction = model.get_muzzle_direction()
+    local did_hit, hit_distance = QueryRaycast(model.get_muzzle_position(), muzzle_direction, weapon_definition.reach)
+    if did_hit then
+        local hit_position = VecAdd(model.get_muzzle_position(), VecScale(muzzle_direction, hit_distance))
+        MakeHole(hit_position, weapon_definition.impact_force, math.log(weapon_definition.impact_force) * 2, math.log(weapon_definition.impact_force))
+    end
 end
 
 model.try_fire = function()
@@ -60,13 +61,39 @@ model.tick = function(deltaTime)
         model.try_fire()
     end
 
+    -- check if weapon firing cycle has ended and transition back to idle state
     if state.weapon_state == "fire" and state.weapon_state_time > state_duration then
         state.set_weapon_state("idle")
     else
         if state.weapon_state == "aimfire" and state.weapon_state_time > state_duration then
-            state.set_weapon_state("aim")
+            state.set_weapon_state("aimidle")
         end
     end
+
+    -- handle aiming transitions
+    if state.is_aiming then
+        if state.weapon_state == "idle" then
+            state.set_weapon_state("aim")
+        else
+            if state.weapon_state == "aim" and state.weapon_state_time > state_duration then
+                state.set_weapon_state("aimidle")
+            end
+        end
+    else
+        if state.weapon_state == "aimidle" then
+            state.set_weapon_state("aim_reverse")
+        else
+            if state.weapon_state == "aim_reverse" and state.weapon_state_time > state_duration then
+                state.set_weapon_state("idle")
+            else
+                if state.weapon_state == "aim" then
+                    state.set_weapon_state("aim_reverse")
+                end
+            end
+        end
+    end
+    
+    DebugPrint(state.weapon_state)
 
     state.weapon_state_time = state.weapon_state_time + deltaTime
 end 
