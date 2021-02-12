@@ -6,7 +6,7 @@ state = {
     equipped_weapon_key = "m16a2",
     weapon_state = "idle",
     weapon_state_time = 0,
-    last_fire_time = 0,
+    last_fire_time = -1,
     is_trigger_pulled = false,
     is_aiming = false
 }

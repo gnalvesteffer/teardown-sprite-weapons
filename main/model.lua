@@ -16,11 +16,23 @@ model.play_weapon_sound = function()
 end
 
 model.is_firing = function()
-    return (state.weapon_state == "fire" or state.weapon_state == "aimfire") and (state.last_fire_time ~= 0 and GetTime() - state.last_fire_time < get_current_weapon_definition().fire_rate)
+    return state.last_fire_time ~= -1 and GetTime() - state.last_fire_time < get_current_weapon_definition().fire_rate
+end
+
+model.is_in_aiming_state = function()
+    return state.weapon_state == "aim" or state.weapon_state == "aimidle" or state.weapon_state == "aimfire"
+end
+
+model.is_in_non_aiming_state = function()
+    return state.weapon_state == "aim_reverse" or state.weapon_state == "idle" or state.weapon_state == "fire"
+end
+
+model.requires_aim_transition = function()
+    return (state.is_aiming and model.is_in_non_aiming_state()) or (not state.is_aiming and model.is_in_aiming_state())
 end
 
 model.can_fire = function()
-    return not model.is_firing() or state.weapon_state_time >= get_current_weapon_definition().fire_rate and state.weapon_state == "idle" and state.weapon_state == "aimidle"
+    return not model.is_firing() and not model.requires_aim_transition()
 end
 
 model.fire = function()
