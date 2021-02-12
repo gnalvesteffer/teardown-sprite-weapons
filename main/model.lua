@@ -43,7 +43,7 @@ model.fire = function()
     local did_hit, hit_distance = QueryRaycast(model.get_muzzle_position(), muzzle_direction, weapon_definition.reach)
     if did_hit then
         local hit_position = VecAdd(model.get_muzzle_position(), VecScale(muzzle_direction, hit_distance))
-        MakeHole(hit_position, weapon_definition.impact_force, math.log(weapon_definition.impact_force) * 2, math.log(weapon_definition.impact_force))
+        MakeHole(hit_position, math.log(weapon_definition.impact_force) * 5, math.log(weapon_definition.impact_force) * 2, math.log(weapon_definition.impact_force))
     end
 end
 
@@ -93,7 +93,5 @@ model.tick = function(deltaTime)
         end
     end
     
-    DebugPrint(state.weapon_state)
-
     state.weapon_state_time = state.weapon_state_time + deltaTime
 end 
