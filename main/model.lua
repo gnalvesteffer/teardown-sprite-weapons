@@ -16,7 +16,7 @@ model.play_weapon_sound = function()
 end
 
 model.is_firing = function()
-    return state.weapon_state == "fire" or state.weapon_state == "aimfire" or (state.last_fire_time ~= 0 and GetTime() - state.last_fire_time < get_current_weapon_definition().fire_rate)
+    return (state.weapon_state == "fire" or state.weapon_state == "aimfire") and (state.last_fire_time ~= 0 and GetTime() - state.last_fire_time < get_current_weapon_definition().fire_rate)
 end
 
 model.can_fire = function()
