@@ -2,7 +2,7 @@ state = {
     weapons = {
         ["m16a2"] = {
             ammo = 30,
-            reserve_ammo = 90
+            reserve_ammo = 30 * 5
         }
     },
     equipped_weapon_key = "m16a2",

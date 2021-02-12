@@ -82,7 +82,7 @@ model.is_reloading = function()
 end
 
 model.can_reload = function()
-    return state.get_current_weapon().reserve_ammo > 0
+    return not model.is_reloading() and state.get_current_weapon().reserve_ammo > 0
 end
 
 model.tick = function(deltaTime)
