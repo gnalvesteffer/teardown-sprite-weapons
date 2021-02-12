@@ -85,6 +85,10 @@ model.can_reload = function()
     return not model.is_reloading() and state.get_current_weapon().reserve_ammo > 0
 end
 
+model.can_switch_weapons = function()
+    return not model.is_reloading() and not model.is_firing()
+end
+
 model.tick = function(deltaTime)
     local current_weapon = state.get_current_weapon()
     local weapon_definition = get_current_weapon_definition()
@@ -144,5 +148,11 @@ model.tick = function(deltaTime)
         model.play_weapon_sound("reload")
     end
     
+    -- handle weapon switching
+    if state.next_weapon_index_delta ~= 0 and model.can_switch_weapons() then
+        state.set_equipped_weapon_index(state.next_weapon_index_delta)
+        state.next_weapon_index_delta = 0
+    end
+
     state.weapon_state_time = state.weapon_state_time + deltaTime
 end 

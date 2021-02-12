@@ -33,8 +33,8 @@ register_weapon({
             total_sounds = 1
         },
     },
-    fire_rate = 0.066,
-    reach = 300,
+    fire_rate = 900,
+    reach = 400,
     impact_force = 1.1,
     magazine_size = 30
 })

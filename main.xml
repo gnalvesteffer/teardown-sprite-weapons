@@ -1,14 +1,14 @@
 <scene id_="1055849408" open_="true" version="0.5.5" shadowVolume="200 100 200">
 	<environment id_="184429568" template="sunny" skyboxrot="-45"/>
 	<spawnpoint id_="117709840"/>
-	<voxbox id_="362763904" name="platform" pos="-5.0 0.0 -5.0" texture="1 0.5" size="100 1 100" color="0.43 0.43 0.43">
+	<voxbox id_="362763904" open_="true" name="platform" pos="-5.0 0.0 -5.0" texture="1 0.5" size="100 1 100" color="0.43 0.43 0.43">
 		<voxbox id_="1993595776" pos="0.0 0.0 0.0" rot="0.0 0.0 90.0" texture="3 0.5" size="10 1 100" color="0.42 0.17 0.11"/>
 		<voxbox id_="811385216" pos="0.0 0.0 0.0" rot="0.0 90.0 90.0" texture="3 0.5" size="10 1 100" color="0.42 0.17 0.11"/>
 		<voxbox id_="70914280" pos="9.9 0.0 10.1" rot="0.0 180.0 90.0" texture="3 0.5" size="10 1 100" color="0.42 0.17 0.11"/>
 		<voxbox id_="1216553472" pos="9.9 0.0 10.1" rot="0.0 270.0 90.0" texture="3 0.5" size="10 1 100" color="0.42 0.17 0.11"/>
-		<voxbox id_="517110592" open_="true" pos="0.5 0.1 0.1" size="30 17 5" brush="MOD/main/vox/brick.vox">
-			<voxbox id_="222836000" open_="true" pos="3.0 0.0 0.0" size="30 17 5" brush="MOD/main/vox/brick.vox">
-				<voxbox id_="1052703488" pos="3.0 0.0 0.0" size="30 17 5" brush="MOD/main/vox/brick.vox"/>
+		<voxbox id_="517110592" open_="true" pos="0.5 0.1 0.1" texture="2 .5" size="30 17 5" brush="MOD/main/vox/brick.vox">
+			<voxbox id_="222836000" open_="true" pos="3.0 0.0 0.0" texture="1 .5" size="30 17 5" brush="MOD/main/vox/brick.vox">
+				<voxbox id_="1052703488" pos="3.0 0.0 0.0" texture="3 .5" size="30 17 5" brush="MOD/main/vox/brick.vox"/>
 			</voxbox>
 		</voxbox>
 	</voxbox>
