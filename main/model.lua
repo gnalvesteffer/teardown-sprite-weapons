@@ -137,7 +137,7 @@ model.tick = function(deltaTime)
             end
         end
     end
-    
+
     -- handle finished reload state
     if state.weapon_state == "reload" and state.weapon_state_time > state_duration then
         state.set_weapon_state("idle")
