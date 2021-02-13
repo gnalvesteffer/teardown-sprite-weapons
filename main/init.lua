@@ -1,4 +1,3 @@
-#include "utilities.lua"
 #include "registry.lua"
 #include "register_weapons.lua"
 #include "state.lua"
