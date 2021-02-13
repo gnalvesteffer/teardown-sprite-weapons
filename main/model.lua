@@ -118,6 +118,10 @@ model.tick = function(deltaTime)
         else
             if state.weapon_state == "aim" and state.weapon_state_time > state_duration then
                 state.set_weapon_state("aimidle")
+            else
+                if state.weapon_state == "aim_reverse" and state.weapon_state_time > state_duration then
+                    state.set_weapon_state("idle")
+                end
             end
         end
     else
@@ -133,7 +137,7 @@ model.tick = function(deltaTime)
             end
         end
     end
-
+    
     -- handle finished reload state
     if state.weapon_state == "reload" and state.weapon_state_time > state_duration then
         state.set_weapon_state("idle")
