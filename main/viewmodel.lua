@@ -22,7 +22,7 @@ end
 
 local function draw_weapon()
     local player_speed = VecLength(GetPlayerVelocity())
-    local movement_amount = math.clamp(player_speed, 0, 10)
+    local movement_amount = math.clamp(player_speed * math.clamp(state.movement_time, 0, 1), 0, 10)
 
     UiPush()
     UiAlign("top left")
