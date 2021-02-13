@@ -36,12 +36,16 @@ model.is_in_non_aiming_state = function()
     return state.weapon_state == "aim_reverse" or state.weapon_state == "idle" or state.weapon_state == "fire"
 end
 
+model.is_in_aiming_transition_state = function()
+    return state.weapon_state == "aim" or state.weapon_state == "aim_reverse"
+end
+
 model.requires_aim_transition = function()
     return (state.is_aiming and model.is_in_non_aiming_state()) or (not state.is_aiming and model.is_in_aiming_state())
 end
 
 model.can_fire = function()
-    return not model.is_firing() and not model.requires_aim_transition() and not model.is_reloading() and state.get_current_weapon().ammo > 0
+    return not model.is_firing() and not model.is_in_aiming_transition_state() and not model.requires_aim_transition() and not model.is_reloading() and state.get_current_weapon().ammo > 0
 end
 
 model.fire = function()
@@ -147,7 +151,7 @@ model.tick = function(deltaTime)
         state.set_weapon_state("reload")
         model.play_weapon_sound("reload")
     end
-    
+
     -- handle weapon switching
     if state.next_weapon_index_delta ~= 0 and model.can_switch_weapons() then
         state.set_equipped_weapon_index(state.next_weapon_index_delta)
