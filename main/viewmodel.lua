@@ -21,13 +21,18 @@ local function get_current_weapon_frame_image_path()
 end
 
 local function draw_weapon()
+    local player_speed = VecLength(GetPlayerVelocity())
+    local movement_amount = math.clamp(player_speed, 0, 10)
+
     UiPush()
     UiAlign("top left")
+    UiTranslate(movement_amount + math.sin(state.movement_time * 10) * movement_amount, movement_amount + math.sin(state.movement_time * 20) * movement_amount)
     UiImage(get_current_weapon_frame_image_path())
     UiPop()
 end
 
 viewmodel.tick = function(deltaTime)
+
 end
 
 viewmodel.draw = function()

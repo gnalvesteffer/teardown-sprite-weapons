@@ -93,6 +93,15 @@ model.can_switch_weapons = function()
     return not model.is_reloading() and not model.is_firing()
 end
 
+model.update_movement_time = function(deltaTime)
+    local player_speed = VecLength(GetPlayerVelocity())
+    if player_speed == 0 then
+        state.movement_time = 0
+    else
+        state.movement_time = state.movement_time + deltaTime
+    end
+end
+
 model.tick = function(deltaTime)
     local current_weapon = state.get_current_weapon()
     local weapon_definition = get_current_weapon_definition()
@@ -161,6 +170,8 @@ model.tick = function(deltaTime)
         state.set_equipped_weapon_index(state.next_weapon_index_delta)
         state.next_weapon_index_delta = 0
     end
+    
+    model.update_movement_time(deltaTime)
 
     state.weapon_state_time = state.weapon_state_time + deltaTime
 end 
