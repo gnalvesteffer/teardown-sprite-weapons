@@ -46,6 +46,7 @@ sprite_npcs.npc.spawn = function(npc_key, transform)
         tick = function(self, deltaTime)
             self:draw_sprite()
             self.time = self.time + deltaTime
+            self.state_time = self.state_time + deltaTime
         end
     }
     table.insert(sprite_npcs.npc.spawned_npcs, npc)
