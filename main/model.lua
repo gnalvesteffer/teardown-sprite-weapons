@@ -112,6 +112,12 @@ model.update_movement_time = function(deltaTime)
 end
 
 model.tick = function(deltaTime)
+    -- disable weapon simulation if in vehicle
+    state.is_enabled = GetPlayerVehicle() == 0
+    if not state.is_enabled then
+        return
+    end
+    
     local current_weapon = state.get_current_weapon()
     local weapon_definition = get_current_weapon_definition()
     local state_duration = weapon_definition.states[state.weapon_state].duration

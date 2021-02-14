@@ -17,7 +17,8 @@ state = {
     is_aiming = false,
     is_attempting_reload = false,
     next_weapon_index_delta = 0,
-    movement_time = 0
+    movement_time = 0,
+    is_enabled = true
 }
 
 state.get_equipped_weapon_index = function()

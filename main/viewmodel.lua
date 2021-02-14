@@ -80,6 +80,10 @@ viewmodel.tick = function(deltaTime)
 end
 
 viewmodel.draw = function()
+    if not state.is_enabled then
+        return
+    end
+
     draw_weapon()
     draw_ammo()
     draw_magazines()
