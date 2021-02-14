@@ -74,9 +74,9 @@ model.fire = function()
         MakeHole(hit_position, math.log(weapon_definition.impact_force) * 5, math.log(weapon_definition.impact_force) * 2, math.log(weapon_definition.impact_force))
 
         for penetration_iterator = 1, math.random(0, weapon_definition.max_penetration_iterations) do
-            did_hit, hit_distance = QueryRaycast(hit_position, muzzle_direction, weapon_definition.reach / 2)
+            local impact_modifier = 1 / (penetration_iterator + 1)
+            did_hit, hit_distance = QueryRaycast(hit_position, muzzle_direction, weapon_definition.reach * impact_modifier)
             if did_hit then
-                local impact_modifier = 1 / (penetration_iterator + 1)
                 local hit_position = VecAdd(hit_position, VecScale(muzzle_direction, hit_distance))
                 MakeHole(hit_position, math.log(weapon_definition.impact_force) * 5 * impact_modifier, math.log(weapon_definition.impact_force) * 2 * impact_modifier, math.log(weapon_definition.impact_force) * impact_modifier)
             end
