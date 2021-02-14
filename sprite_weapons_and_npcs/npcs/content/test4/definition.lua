@@ -6,7 +6,7 @@ sprite_npcs.registry.register_npc({
             total_frames = 1,
             frame_rate = 1,
             image_size = { width = 89, height = 256 },
-            npc_height = 2
+            npc_height = 2.1
         }
     }
 })
