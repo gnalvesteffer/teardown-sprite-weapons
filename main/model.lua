@@ -1,7 +1,7 @@
 model = {}
 
 model.get_muzzle_position = function()
-    return VecAdd(GetCameraTransform().pos, model.get_muzzle_direction())
+    return GetCameraTransform().pos
 end
 
 model.get_muzzle_direction = function()
