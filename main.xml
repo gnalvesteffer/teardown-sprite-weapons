@@ -3,16 +3,34 @@
 	<spawnpoint id_="117709840"/>
 	<voxbox id_="362763904" open_="true" name="platform" pos="-5.0 0.0 -5.0" texture="1 0.5" size="100 1 100" color="0.43 0.43 0.43">
 		<voxbox id_="1993595776" pos="0.0 0.0 0.0" rot="0.0 0.0 90.0" texture="3 0.5" size="10 1 100" color="0.42 0.17 0.11"/>
-		<voxbox id_="811385216" pos="0.0 0.0 0.0" rot="0.0 90.0 90.0" texture="3 0.5" size="10 1 100" color="0.42 0.17 0.11"/>
 		<voxbox id_="70914280" pos="9.9 0.0 10.1" rot="0.0 180.0 90.0" texture="3 0.5" size="10 1 100" color="0.42 0.17 0.11"/>
 		<voxbox id_="1216553472" pos="9.9 0.0 10.1" rot="0.0 270.0 90.0" texture="3 0.5" size="10 1 100" color="0.42 0.17 0.11"/>
-		<voxbox id_="517110592" open_="true" pos="0.5 0.1 0.1" texture="2 .5" size="30 17 5" brush="MOD/main/vox/brick.vox">
-			<voxbox id_="222836000" open_="true" pos="3.0 0.0 0.0" texture="1 .5" size="30 17 5" brush="MOD/main/vox/brick.vox">
-				<voxbox id_="1052703488" pos="3.0 0.0 0.0" texture="3 .5" size="30 17 5" brush="MOD/main/vox/brick.vox"/>
+	</voxbox>
+	<voxbox id_="376986080" open_="true" name="platform" pos="-5.0 0.0 -15.0" rot="0.0 0.0 0.0" texture="1 0.5" size="100 1 100" color="0.43 0.43 0.43">
+		<voxbox id_="1364280576" pos="0.0 0.0 0.0" rot="0.0 0.0 90.0" texture="3 0.5" size="10 1 100" color="0.42 0.17 0.11"/>
+		<voxbox id_="13501240" pos="0.0 0.0 0.0" rot="0.0 90.0 90.0" texture="3 0.5" size="10 1 100" color="0.42 0.17 0.11"/>
+		<voxbox id_="1827910656" pos="9.9 0.0 10.1" rot="0.0 180.0 90.0" texture="3 0.5" size="10 1 100" color="0.42 0.17 0.11"/>
+		<voxbox id_="1701025152" pos="0.5 0.1 10.6" texture="2 .5" size="30 17 5" brush="MOD/main/vox/brick.vox"/>
+		<voxbox id_="1283928576" pos="0.5 0.1 8.7" texture="2 .5" size="30 17 5" brush="MOD/main/vox/brick.vox"/>
+		<voxbox id_="1087570816" pos="0.5 0.1 6.8" texture="2 .5" size="30 17 5" brush="MOD/main/vox/brick.vox"/>
+		<voxbox id_="968681216" pos="0.5 0.1 5.0" texture="2 .5" size="30 17 5" brush="MOD/main/vox/brick.vox"/>
+		<vox id_="679387648" pos="7.5 0.1 10.7" texture="1 .5" file="MOD/main/vox/wood wall.vox"/>
+		<vox id_="1349861888" pos="7.5 0.1 8.2" texture="1 .5" file="MOD/main/vox/wood wall.vox"/>
+		<vox id_="1951584640" pos="7.5 0.1 5.8" texture="1 .5" file="MOD/main/vox/wood wall.vox"/>
+		<vox id_="1051392704" pos="7.5 0.1 3.5" texture="1 .5" file="MOD/main/vox/wood wall.vox"/>
+	</voxbox>
+	<script id_="1717737856" file="MOD/main/init.lua"/>
+	<voxbox id_="1346978048" open_="true" name="platform" pos="9.6 0.0 -15.0" rot="0.0 0.0 0.0" texture="1 0.5" size="100 1 100" color="0.43 0.43 0.43">
+		<voxbox id_="1770497536" pos="0.0 0.0 0.0" rot="0.0 0.0 90.0" texture="3 0.5" size="10 1 100" color="0.42 0.17 0.11"/>
+		<voxbox id_="949936768" pos="0.0 0.0 0.0" rot="0.0 90.0 90.0" texture="3 0.5" size="10 1 100" color="0.42 0.17 0.11"/>
+		<voxbox id_="1343045632" pos="9.9 0.0 10.1" rot="0.0 180.0 90.0" texture="3 0.5" size="10 1 100" color="0.42 0.17 0.11"/>
+		<voxbox id_="1007808576" pos="9.9 0.0 10.1" rot="0.0 270.0 90.0" texture="3 0.5" size="10 1 100" color="0.42 0.17 0.11"/>
+		<voxbox id_="1606778624" open_="true" pos="0.5 0.1 0.1" texture="2 .5" size="30 17 5" brush="MOD/main/vox/brick.vox">
+			<voxbox id_="22545760" open_="true" pos="3.0 0.0 0.0" texture="1 .5" size="30 17 5" brush="MOD/main/vox/brick.vox">
+				<voxbox id_="1791011584" pos="3.0 0.0 0.0" texture="3 .5" size="30 17 5" brush="MOD/main/vox/brick.vox"/>
 			</voxbox>
 		</voxbox>
 	</voxbox>
-	<script id_="1717737856" file="MOD/main/init.lua"/>
 	<layers/>
 </scene>
 

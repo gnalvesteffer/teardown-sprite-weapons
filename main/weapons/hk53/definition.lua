@@ -36,6 +36,7 @@ register_weapon({
     fire_rate = 750,
     reach = 200,
     impact_force = 1.05,
+    max_penetration_iterations = 1,
     magazine_size = 25,
     ammo_image_size = { width = 8, height = 51 },
     magazine_image_size = { width = 31, height = 64 }
