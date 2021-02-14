@@ -94,6 +94,16 @@ function register_weapon(definition)
         fire_rate = 1 / (definition.fire_rate / 60), -- rounds per minute (gets converted to seconds per shot)
         reach = definition.reach, -- distance in meters that the weapon can reach/hit/shoot
         impact_force = definition.impact_force, -- influences the size of holes made when shooting stuff
-        magazine_size = definition.magazine_size
+        magazine_size = definition.magazine_size,
+        ammo_image_path = "weapons/" .. definition.key .. "/images/ammo.png",
+        ammo_image_size = {
+            width = definition.ammo_image_size.width,
+            height = definition.ammo_image_size.height
+        },
+        magazine_image_path = "weapons/" .. definition.key .. "/images/magazine.png",
+        magazine_image_size = {
+            width = definition.magazine_image_size.width,
+            height = definition.magazine_image_size.height
+        }
     }
 end

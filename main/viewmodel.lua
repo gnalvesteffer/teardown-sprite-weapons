@@ -39,10 +39,49 @@ local function draw_weapon()
     UiPop()
 end
 
-viewmodel.tick = function(deltaTime)
+local function draw_ammo()
+    local weapon_definition = get_current_weapon_definition()
+    local ammo = state.get_current_weapon().ammo
+    for ammo_iterator = 0, ammo - 1 do
+        UiPush()
+        UiAlign("bottom right")
+        UiTranslate((UiWidth() - 10) - (weapon_definition.ammo_image_size.width * ammo_iterator), UiHeight() - 10)
+        UiImage(weapon_definition.ammo_image_path)
+        UiPop()
+    end
+end
 
+local function draw_magazines()
+    local weapon_definition = get_current_weapon_definition()
+    for magazine_iterator = 0, state.get_reserve_magazine_count() - 1 do
+        UiPush()
+        UiAlign("bottom right")
+        UiTranslate((UiWidth() - 10) - (weapon_definition.magazine_image_size.width * magazine_iterator), (UiHeight() - 10) - weapon_definition.ammo_image_size.height - 10)
+        UiImage(weapon_definition.magazine_image_path)
+        UiPop()
+    end
+end
+
+local function draw_weapon_name()
+    local weapon_definition = get_current_weapon_definition()
+    UiPush()
+    UiAlign("bottom right")
+    UiTranslate(UiWidth() - 10, (UiHeight() - 10) - (weapon_definition.magazine_image_size.height + 10 + weapon_definition.ammo_image_size.height + 10))
+    UiFont("bold.ttf", 32)
+    local text_width, text_height = UiGetTextSize(weapon_definition.name)
+    UiColor(0, 0, 0)
+    UiRect(text_width, text_height)
+    UiColor(1, 1, 1)
+    UiText(weapon_definition.name)
+    UiPop()
+end
+
+viewmodel.tick = function(deltaTime)
 end
 
 viewmodel.draw = function()
     draw_weapon()
+    draw_ammo()
+    draw_magazines()
+    draw_weapon_name()
 end

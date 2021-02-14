@@ -51,6 +51,11 @@ state.get_current_weapon = function()
     return state.weapons[state.equipped_weapon_key]
 end
 
+state.get_reserve_magazine_count = function()
+    local magazine_size =  get_current_weapon_definition().magazine_size
+    return math.ceil(state.get_current_weapon().reserve_ammo / magazine_size)
+end
+
 function get_current_weapon_definition()
     return registered_weapons[state.equipped_weapon_key]
 end

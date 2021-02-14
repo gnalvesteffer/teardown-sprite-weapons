@@ -15,7 +15,7 @@ end
 
 function draw()
     if not preloader.has_preloaded then
-        preloader.preload_images()
+        preloader.preload_images() -- preloading reduces slowdown ingame, but results in longer load times at the start
     end
     
     viewmodel.draw()
