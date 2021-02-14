@@ -1,32 +1,32 @@
-viewmodel = {}
+sprite_weapons.viewmodel = {}
 
 local function calculate_current_weapon_frame()
-    local weapon_definition = get_current_weapon_definition()
-    local weapon_state_definition = weapon_definition.states[state.weapon_state]
+    local weapon_definition = sprite_weapons.state.get_current_weapon_definition()
+    local weapon_state_definition = weapon_definition.states[sprite_weapons.state.weapon_state]
 
     if weapon_state_definition.animation_mode == "loop" then
-        return math.floor((state.weapon_state_time * weapon_state_definition.frame_rate % weapon_state_definition.total_frames) + 1)
+        return math.floor((sprite_weapons.state.weapon_state_time * weapon_state_definition.frame_rate % weapon_state_definition.total_frames) + 1)
     else
         if weapon_state_definition.animation_mode == "oneshot" then
-            return math.min(math.floor(state.weapon_state_time * weapon_state_definition.frame_rate) + 1, weapon_state_definition.total_frames)
+            return math.min(math.floor(sprite_weapons.state.weapon_state_time * weapon_state_definition.frame_rate) + 1, weapon_state_definition.total_frames)
         end
     end
 end
 
 local function get_current_weapon_frame_image_path()
-    local weapon_definition = get_current_weapon_definition()
-    local weapon_state_definition = weapon_definition.states[state.weapon_state]
+    local weapon_definition = sprite_weapons.state.get_current_weapon_definition()
+    local weapon_state_definition = weapon_definition.states[sprite_weapons.state.weapon_state]
     local frame_number = calculate_current_weapon_frame()
     return weapon_state_definition.frames[frame_number]
 end
 
 local function get_weapon_sway_amount()
     local player_speed = VecLength(GetPlayerVelocity())
-    local movement_amount = math.clamp(player_speed * math.clamp(state.movement_time, 0, 1), 0, 10)
+    local movement_amount = math.clamp(player_speed * math.clamp(sprite_weapons.state.movement_time, 0, 1), 0, 10)
     local breathing_amount = 3 -- todo: tie this to some sort of stamina variable?
     return {
-        x = (breathing_amount + math.sin(GetTime() * 1.3) * breathing_amount) + (movement_amount + math.sin(state.movement_time * 10) * movement_amount),
-        y = (breathing_amount + math.cos(GetTime() * 2) * breathing_amount) + (movement_amount + math.sin(state.movement_time * 20) * movement_amount)
+        x = (breathing_amount + math.sin(GetTime() * 1.3) * breathing_amount) + (movement_amount + math.sin(sprite_weapons.state.movement_time * 10) * movement_amount),
+        y = (breathing_amount + math.cos(GetTime() * 2) * breathing_amount) + (movement_amount + math.sin(sprite_weapons.state.movement_time * 20) * movement_amount)
     }
 end
 
@@ -40,8 +40,8 @@ local function draw_weapon()
 end
 
 local function draw_ammo()
-    local weapon_definition = get_current_weapon_definition()
-    local ammo = state.get_current_weapon().ammo
+    local weapon_definition = sprite_weapons.state.get_current_weapon_definition()
+    local ammo = sprite_weapons.state.get_current_weapon().ammo
     for ammo_iterator = 0, ammo - 1 do
         UiPush()
         UiAlign("bottom right")
@@ -52,8 +52,8 @@ local function draw_ammo()
 end
 
 local function draw_magazines()
-    local weapon_definition = get_current_weapon_definition()
-    for magazine_iterator = 0, state.get_reserve_magazine_count() - 1 do
+    local weapon_definition = sprite_weapons.state.get_current_weapon_definition()
+    for magazine_iterator = 0, sprite_weapons.state.get_reserve_magazine_count() - 1 do
         UiPush()
         UiAlign("bottom right")
         UiTranslate((UiWidth() - 10) - (weapon_definition.magazine_image_size.width * magazine_iterator), (UiHeight() - 10) - weapon_definition.ammo_image_size.height - 10)
@@ -63,7 +63,7 @@ local function draw_magazines()
 end
 
 local function draw_weapon_name()
-    local weapon_definition = get_current_weapon_definition()
+    local weapon_definition = sprite_weapons.state.get_current_weapon_definition()
     UiPush()
     UiAlign("bottom right")
     UiTranslate(UiWidth() - 10, (UiHeight() - 10) - (weapon_definition.magazine_image_size.height + 10 + weapon_definition.ammo_image_size.height + 10))
@@ -76,11 +76,11 @@ local function draw_weapon_name()
     UiPop()
 end
 
-viewmodel.tick = function(deltaTime)
+sprite_weapons.viewmodel.tick = function(deltaTime)
 end
 
-viewmodel.draw = function()
-    if not state.is_enabled then
+sprite_weapons.viewmodel.draw = function()
+    if not sprite_weapons.state.is_enabled then
         return
     end
 

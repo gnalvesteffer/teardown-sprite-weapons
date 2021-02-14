@@ -1,4 +1,4 @@
-register_weapon({
+sprite_weapons.registry.register_weapon({
     key = "m16a2",
     name = "M16A2",
     states = {

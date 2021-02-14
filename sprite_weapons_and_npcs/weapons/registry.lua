@@ -1,14 +1,15 @@
-registered_weapons = {}
+sprite_weapons.registry = {}
+sprite_weapons.registry.registered_weapons = {}
 
 local function build_frames(weapon_key, animation_name, total_frames, is_reversed)
     local frames = {}
     if is_reversed then
         for frame_number = total_frames, 1, -1 do
-            table.insert(frames, "weapons/" .. weapon_key .. "/images/" .. animation_name .. "." .. frame_number .. ".png")
+            table.insert(frames, "weapons/content/" .. weapon_key .. "/images/" .. animation_name .. "." .. frame_number .. ".png")
         end
     else
         for frame_number = 1, total_frames do
-            table.insert(frames, "weapons/" .. weapon_key .. "/images/" .. animation_name .. "." .. frame_number .. ".png")
+            table.insert(frames, "weapons/content/" .. weapon_key .. "/images/" .. animation_name .. "." .. frame_number .. ".png")
         end
     end
     return frames
@@ -17,13 +18,13 @@ end
 local function load_sounds(weapon_key, sound_name, total_sounds)
     local sounds = {}
     for sound_number = 1, total_sounds do
-        table.insert(sounds, LoadSound("weapons/" .. weapon_key .. "/sounds/" .. sound_name .. "." .. sound_number .. ".ogg"))
+        table.insert(sounds, LoadSound("weapons/content/" .. weapon_key .. "/sounds/" .. sound_name .. "." .. sound_number .. ".ogg"))
     end
     return sounds
 end
 
-function register_weapon(definition)
-    registered_weapons[definition.key] = { -- `key` must match the weapon's folder name
+sprite_weapons.registry.register_weapon = function(definition)
+    sprite_weapons.registry.registered_weapons[definition.key] = { -- `key` must match the weapon's folder name
         key = definition.key,
         name = definition.name,
         states = {
@@ -96,12 +97,12 @@ function register_weapon(definition)
         impact_force = definition.impact_force, -- influences the size of holes made when shooting stuff
         max_penetration_iterations = definition.max_penetration_iterations, -- maximum iterations to perform bullet penetration / shooting through surfaces
         magazine_size = definition.magazine_size,
-        ammo_image_path = "weapons/" .. definition.key .. "/images/ammo.png",
+        ammo_image_path = "weapons/content/" .. definition.key .. "/images/ammo.png",
         ammo_image_size = {
             width = definition.ammo_image_size.width,
             height = definition.ammo_image_size.height
         },
-        magazine_image_path = "weapons/" .. definition.key .. "/images/magazine.png",
+        magazine_image_path = "weapons/content/" .. definition.key .. "/images/magazine.png",
         magazine_image_size = {
             width = definition.magazine_image_size.width,
             height = definition.magazine_image_size.height
