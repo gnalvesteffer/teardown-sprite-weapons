@@ -14,9 +14,10 @@ sprite_npcs.init = function()
 end
 
 sprite_npcs.tick = function(deltaTime)
-    for npc_iterator = 1, #sprite_npcs.npc.spawned_npcs do
-        sprite_npcs.npc.spawned_npcs[npc_iterator]:tick(deltaTime)
-    end    
+    sprite_npcs.npc.sort_spawned_npcs_by_distance()
+    for npc_iterator, npc in ipairs(sprite_npcs.npc.spawned_npcs) do
+        npc:tick(deltaTime)
+    end
 end
 
 sprite_npcs.draw = function()

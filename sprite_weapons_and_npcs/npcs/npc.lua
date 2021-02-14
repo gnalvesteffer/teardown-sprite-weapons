@@ -1,6 +1,15 @@
-sprite_npcs.npc = {
-    spawned_npcs = {}
-}
+sprite_npcs.npc = {}
+
+sprite_npcs.npc.spawned_npcs = {}
+
+sprite_npcs.npc.sort_spawned_npcs_by_distance = function()
+    local camera_position = GetCameraTransform().pos
+    table.sort(sprite_npcs.npc.spawned_npcs, function(npc_1, npc_2)
+        local npc_distance_1 = VecLength(VecSub(npc_1.position, camera_position))
+        local npc_distance_2 = VecLength(VecSub(npc_2.position, camera_position))
+        return npc_distance_1 > npc_distance_2
+    end)
+end
 
 sprite_npcs.npc.spawn = function(npc_key, transform)
     local npc = {
