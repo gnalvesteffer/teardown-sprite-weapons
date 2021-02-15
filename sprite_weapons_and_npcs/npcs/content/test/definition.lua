@@ -14,5 +14,6 @@ sprite_npcs.registry.register_npc({
             image_size = { width = 186, height = 256 },
             npc_height = 2.2
         },
-    }
+    },
+    health = 1
 })

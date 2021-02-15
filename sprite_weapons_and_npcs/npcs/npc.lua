@@ -19,6 +19,7 @@ sprite_npcs.npc.spawn = function(npc_key, transform)
         state = "idle",
         state_time = 0,
         time = 0,
+        health = sprite_npcs.registry.registered_npcs[npc_key].health,
         get_current_state_definition = function(self)
             return self.npc_definition.states[self.state]
         end,
@@ -37,6 +38,15 @@ sprite_npcs.npc.spawn = function(npc_key, transform)
         set_state = function(self, state)
             self.state = state
             self.state_time = 0
+        end,
+        damage = function(self, amount)
+            self.health = math.max(self.health - amount, 0)
+            if self.health == 0 then
+                self:kill()
+            end
+        end,
+        kill = function(self)
+            self:set_state("die")
         end,
         draw_sprite = function(self)
             local state_definition = self:get_current_state_definition()
