@@ -66,6 +66,7 @@ sprite_npcs.npc.spawn = function(npc_key, transform)
         get_screen_bounding_box = function(self)
             local state_definition = self:get_current_state_definition()
             local transform = self:get_transform()
+            transform.pos[2] = transform.pos[2] + state_definition.draw_height_offset -- offset height
 
             local top_left_world_position = TransformToParentPoint(transform, Vec(-state_definition.npc_width / 2, state_definition.npc_height, 0))
             local top_right_world_position = TransformToParentPoint(transform, Vec(state_definition.npc_width / 2, state_definition.npc_height, 0))
@@ -110,7 +111,7 @@ sprite_npcs.npc.spawn = function(npc_key, transform)
         draw_sprite = function(self)
             local state_definition = self:get_current_state_definition()
             local transform = self:get_transform()
-            transform.pos[2] = transform.pos[2] + state_definition.npc_height / 2 -- vertically aligns the position to the bottom of the sprite
+            transform.pos[2] = (transform.pos[2] + state_definition.npc_height / 2) + state_definition.draw_height_offset -- vertically aligns the position to the bottom of the sprite
             DrawSprite(self:get_current_frame(), transform, state_definition.npc_width, state_definition.npc_height, 1, 1, 1, 1, true)
         end,
         update_state = function(self)
