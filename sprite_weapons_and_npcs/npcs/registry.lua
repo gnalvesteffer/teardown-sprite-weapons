@@ -37,7 +37,17 @@ sprite_npcs.registry.register_npc = function(definition)
                 npc_height = definition.states.idle.npc_height, -- height of NPC in meters during this animation state
                 duration = definition.states.idle.total_frames / definition.states.idle.frame_rate,
                 animation_mode = "loop"
-            }
+            },
+            die = {
+                frames = build_frames(definition.key, "die", definition.states.die.total_frames, false),
+                total_frames = definition.states.die.total_frames,
+                frame_rate = definition.states.die.frame_rate,
+                image_size = definition.states.die.image_size,
+                aspect_ratio = definition.states.die.image_size.width / definition.states.die.image_size.height, -- width:height
+                npc_height = definition.states.die.npc_height, -- height of NPC in meters during this animation state
+                duration = definition.states.die.total_frames / definition.states.die.frame_rate,
+                animation_mode = "oneshot"
+            },
         }
     }
 end
