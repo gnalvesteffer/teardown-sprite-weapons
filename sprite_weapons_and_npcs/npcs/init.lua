@@ -23,5 +23,4 @@ sprite_npcs.tick = function(delta_time)
 end
 
 sprite_npcs.draw = function()
-
 end

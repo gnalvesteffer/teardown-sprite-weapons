@@ -14,7 +14,7 @@ sprite_npcs.npc_registry.register_npc({
         },
         aim = {
             total_frames = 3,
-            frame_rate = 10,
+            frame_rate = 5,
             image_size = { width = 111, height = 253 },
             npc_height = 2,
             draw_height_offset = -0.1,

@@ -40,7 +40,8 @@ sprite_npcs.npc_registry.register_npc = function(definition)
                 npc_width = definition.states.idle.npc_height * definition.states.idle.image_size.width / definition.states.idle.image_size.height, -- width of NPC in meters during this animation state
                 npc_height = definition.states.idle.npc_height, -- height of NPC in meters during this animation state
                 duration = definition.states.idle.total_frames / definition.states.idle.frame_rate,
-                animation_mode = "loop"
+                animation_mode = "loop",
+                sounds = load_sounds(definition.key, "idle", definition.states.hurt.total_sounds)
             },
             aim = {
                 frames = build_frames(definition.key, "aim", definition.states.aim.total_frames, false),
@@ -52,7 +53,8 @@ sprite_npcs.npc_registry.register_npc = function(definition)
                 npc_width = definition.states.aim.npc_height * definition.states.aim.image_size.width / definition.states.aim.image_size.height, -- width of NPC in meters during this animation state
                 npc_height = definition.states.aim.npc_height, -- height of NPC in meters during this animation state
                 duration = definition.states.aim.total_frames / definition.states.aim.frame_rate,
-                animation_mode = "oneshot"
+                animation_mode = "oneshot",
+                sounds = load_sounds(definition.key, "aim", definition.states.hurt.total_sounds)
             },
             hurt = {
                 frames = build_frames(definition.key, "hurt", definition.states.hurt.total_frames, false),

@@ -39,6 +39,9 @@ sprite_npcs.npc.spawn = function(npc_key, transform)
         state_time = 0,
         time = 0,
         health = sprite_npcs.npc_registry.registered_npcs[npc_key].health,
+        is_alive = function(self)
+            return self.state ~= "dead"
+        end,
         get_current_state_definition = function(self)
             return self.npc_definition.states[self.state]
         end,
@@ -87,10 +90,15 @@ sprite_npcs.npc.spawn = function(npc_key, transform)
             }
         end,
         set_state = function(self, state)
+            if self.state == state then
+                return
+            end
             self.state = state
             self.state_time = 0
             local state_definition = self:get_current_state_definition()
-            PlaySound(state_definition.sounds[math.random(1, #state_definition.sounds)], self.position)
+            if #state_definition.sounds > 0 then
+                PlaySound(state_definition.sounds[math.random(1, #state_definition.sounds)], self.position)
+            end
         end,
         damage = function(self, amount)
             if amount <= 0 then
@@ -100,10 +108,7 @@ sprite_npcs.npc.spawn = function(npc_key, transform)
             if self.health == 0 and self.state ~= "dead" then
                 self:die()
             else
-                if self.state ~= "hurt" then
-                    self:set_state("hurt")
-                    local state_definition = self:get_current_state_definition()
-                end
+                self:set_state("hurt")
             end
         end,
         die = function(self)
