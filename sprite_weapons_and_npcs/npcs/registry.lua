@@ -41,6 +41,18 @@ sprite_npcs.registry.register_npc = function(definition)
                 duration = definition.states.idle.total_frames / definition.states.idle.frame_rate,
                 animation_mode = "loop"
             },
+            aim = {
+                frames = build_frames(definition.key, "aim", definition.states.aim.total_frames, false),
+                total_frames = definition.states.aim.total_frames,
+                frame_rate = definition.states.aim.frame_rate,
+                image_size = definition.states.aim.image_size,
+                aspect_ratio = definition.states.aim.image_size.width / definition.states.aim.image_size.height, -- width:height
+                draw_height_offset = definition.states.aim.draw_height_offset,
+                npc_width = definition.states.aim.npc_height * definition.states.aim.image_size.width / definition.states.aim.image_size.height, -- width of NPC in meters during this animation state
+                npc_height = definition.states.aim.npc_height, -- height of NPC in meters during this animation state
+                duration = definition.states.aim.total_frames / definition.states.aim.frame_rate,
+                animation_mode = "oneshot"
+            },
             hurt = {
                 frames = build_frames(definition.key, "hurt", definition.states.hurt.total_frames, false),
                 total_frames = definition.states.hurt.total_frames,
