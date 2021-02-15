@@ -67,8 +67,16 @@ sprite_weapons.model.fire = function()
     end
 
     local weapon_definition = sprite_weapons.state.get_current_weapon_definition()
+    local muzzle_position = sprite_weapons.model.get_muzzle_position()
     local muzzle_direction = sprite_weapons.model.get_muzzle_direction()
-    local did_hit, hit_distance = QueryRaycast(sprite_weapons.model.get_muzzle_position(), muzzle_direction, weapon_definition.reach)
+
+    local muzzle_screen_x, muzzle_screen_y = UiWorldToPixel(VecAdd(muzzle_position, muzzle_direction))
+    local npc_at_screen_hit_position = sprite_npcs.npc.get_npc_at_screen_position(Vec(muzzle_screen_x, muzzle_screen_y), { ["dead"] = true })
+    if npc_at_screen_hit_position ~= nil then
+        npc_at_screen_hit_position:damage(weapon_definition.impact_force)
+    end
+
+    local did_hit, hit_distance = QueryRaycast(muzzle_position, muzzle_direction, weapon_definition.reach)
     if did_hit then
         local hit_position = VecAdd(sprite_weapons.model.get_muzzle_position(), VecScale(muzzle_direction, hit_distance))
         MakeHole(hit_position, math.log(weapon_definition.impact_force) * 5, math.log(weapon_definition.impact_force) * 2, math.log(weapon_definition.impact_force))
@@ -117,7 +125,7 @@ sprite_weapons.model.tick = function(deltaTime)
     if not sprite_weapons.state.is_enabled then
         return
     end
-    
+
     local current_weapon = sprite_weapons.state.get_current_weapon()
     local weapon_definition = sprite_weapons.state.get_current_weapon_definition()
     local state_duration = weapon_definition.states[sprite_weapons.state.weapon_state].duration

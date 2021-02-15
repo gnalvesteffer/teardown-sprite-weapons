@@ -11,11 +11,26 @@ sprite_npcs.npc.sort_spawned_npcs_by_distance = function()
     end)
 end
 
+sprite_npcs.npc.get_npc_at_screen_position = function(screen_position, states_to_ignore)
+    if states_to_ignore == nil then
+        states_to_ignore = {}
+    end
+
+    for npc_iterator, npc in ipairs(sprite_npcs.npc.spawned_npcs) do
+        if states_to_ignore[npc.state] == nil then
+            local bounds = npc:get_screen_bounding_box()
+            if screen_position[1] >= bounds.top_left.x and screen_position[1] <= bounds.top_right.x and screen_position[2] >= bounds.top_left.y and screen_position[2] <= bounds.bottom_left.y then
+                return npc
+            end
+        end
+    end
+    return nil
+end
+
 sprite_npcs.npc.spawn = function(npc_key, transform)
     local npc = {
         npc_definition = sprite_npcs.registry.registered_npcs[npc_key],
         position = transform.pos,
-        rotation = transform.rot,
         state = "idle",
         state_time = 0,
         time = 0,
@@ -35,32 +50,54 @@ sprite_npcs.npc.spawn = function(npc_key, transform)
             end
             return state_definition.frames[frame_number]
         end,
+        get_transform = function(self)
+            local transform = Transform(self.position)
+
+            local look_at_position = GetPlayerTransform().pos
+            look_at_position[2] = transform.pos[2] -- prevents sprite from rotating upwards/downwards (makes it stand straight-up)
+
+            transform.rot = GetCameraTransform().rot -- makes npc sprite face player / behave like billboard
+            return transform
+        end,
+        get_screen_bounding_box = function(self)
+            local state_definition = self:get_current_state_definition()
+            local transform = self:get_transform()
+
+            local top_left_world_position = TransformToParentPoint(transform, Vec(-state_definition.npc_width / 2, state_definition.npc_height, 0))
+            local top_right_world_position = TransformToParentPoint(transform, Vec(state_definition.npc_width / 2, state_definition.npc_height, 0))
+            local bottom_left_world_position = TransformToParentPoint(transform, Vec(-state_definition.npc_width / 2, 0, 0))
+            local bottom_right_world_position = TransformToParentPoint(transform, Vec(state_definition.npc_width / 2, 0, 0))
+
+            local top_left_screen_x, top_left_screen_y = UiWorldToPixel(top_left_world_position)
+            local top_right_screen_x, top_right_screen_y = UiWorldToPixel(top_right_world_position)
+            local bottom_left_screen_x, bottom_left_screen_y = UiWorldToPixel(bottom_left_world_position)
+            local bottom_right_screen_x, bottom_right_screen_y = UiWorldToPixel(bottom_right_world_position)
+
+            return {
+                top_left = { x = top_left_screen_x, y = top_left_screen_y },
+                top_right = { x = top_right_screen_x, y = top_right_screen_y },
+                bottom_left = { x = bottom_left_screen_x, y = bottom_left_screen_y },
+                bottom_right = { x = bottom_right_screen_x, y = bottom_right_screen_y },
+            }
+        end,
         set_state = function(self, state)
             self.state = state
             self.state_time = 0
         end,
         damage = function(self, amount)
             self.health = math.max(self.health - amount, 0)
-            if self.health == 0 then
+            if self.health == 0 and self.state ~= "dead" then
                 self:kill()
             end
         end,
         kill = function(self)
-            self:set_state("die")
+            self:set_state("dead")
         end,
         draw_sprite = function(self)
             local state_definition = self:get_current_state_definition()
-
-            local npc_transform = Transform(self.position, self.rotation)
-            npc_transform.pos[2] = npc_transform.pos[2] + state_definition.npc_height / 2
-
-            local look_at_position = GetPlayerTransform().pos
-            look_at_position[2] = npc_transform.pos[2] -- prevents sprite from rotating upwards/downwards (makes it stand straight-up)
-
-            npc_transform.rot = QuatLookAt(npc_transform.pos, look_at_position) -- makes npc sprite face player / behave like billboard
-
-            local npc_width = state_definition.npc_height * state_definition.aspect_ratio
-            DrawSprite(self:get_current_frame(), npc_transform, npc_width, state_definition.npc_height, 1, 1, 1, 1, true)
+            local transform = self:get_transform()
+            transform.pos[2] = transform.pos[2] + state_definition.npc_height / 2 -- vertically aligns the position to the bottom of the sprite
+            DrawSprite(self:get_current_frame(), transform, state_definition.npc_width, state_definition.npc_height, 1, 1, 1, 1, true)
         end,
         tick = function(self, deltaTime)
             self:draw_sprite()

@@ -27,6 +27,7 @@ sprite_npcs.registry.register_npc = function(definition)
     sprite_npcs.registry.registered_npcs[definition.key] = {
         key = definition.key,
         name = definition.name,
+        health = definition.health,
         states = {
             idle = {
                 frames = build_frames(definition.key, "idle", definition.states.idle.total_frames, false),
@@ -34,18 +35,20 @@ sprite_npcs.registry.register_npc = function(definition)
                 frame_rate = definition.states.idle.frame_rate,
                 image_size = definition.states.idle.image_size,
                 aspect_ratio = definition.states.idle.image_size.width / definition.states.idle.image_size.height, -- width:height
+                npc_width = definition.states.idle.npc_height * definition.states.idle.image_size.width / definition.states.idle.image_size.height, -- width of NPC in meters during this animation state
                 npc_height = definition.states.idle.npc_height, -- height of NPC in meters during this animation state
                 duration = definition.states.idle.total_frames / definition.states.idle.frame_rate,
                 animation_mode = "loop"
             },
-            die = {
-                frames = build_frames(definition.key, "die", definition.states.die.total_frames, false),
-                total_frames = definition.states.die.total_frames,
-                frame_rate = definition.states.die.frame_rate,
-                image_size = definition.states.die.image_size,
-                aspect_ratio = definition.states.die.image_size.width / definition.states.die.image_size.height, -- width:height
-                npc_height = definition.states.die.npc_height, -- height of NPC in meters during this animation state
-                duration = definition.states.die.total_frames / definition.states.die.frame_rate,
+            dead = {
+                frames = build_frames(definition.key, "dead", definition.states.dead.total_frames, false),
+                total_frames = definition.states.dead.total_frames,
+                frame_rate = definition.states.dead.frame_rate,
+                image_size = definition.states.dead.image_size,
+                aspect_ratio = definition.states.dead.image_size.width / definition.states.dead.image_size.height, -- width:height
+                npc_width = definition.states.dead.npc_height * definition.states.dead.image_size.width / definition.states.dead.image_size.height, -- width of NPC in meters during this animation state
+                npc_height = definition.states.dead.npc_height, -- height of NPC in meters during this animation state
+                duration = definition.states.dead.total_frames / definition.states.dead.frame_rate,
                 animation_mode = "oneshot"
             },
         }

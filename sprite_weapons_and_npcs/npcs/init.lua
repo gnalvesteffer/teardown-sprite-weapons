@@ -21,5 +21,39 @@ sprite_npcs.tick = function(deltaTime)
 end
 
 sprite_npcs.draw = function()
+    for npc_iterator, npc in ipairs(sprite_npcs.npc.spawned_npcs) do
+        local screen_bounds = npc:get_screen_bounding_box()
 
+        UiPush()
+        UiTranslate(screen_bounds.top_left.x, screen_bounds.top_left.y)
+        UiColor(1, 0, 0)
+        UiRect(5, 5)
+        UiFont("bold.ttf", 18)
+        UiText(tostring(math.floor(screen_bounds.top_left.x)) .. "," .. tostring(math.floor(screen_bounds.top_left.y)))
+        UiPop()
+
+        UiPush()
+        UiTranslate(screen_bounds.top_right.x, screen_bounds.top_right.y)
+        UiColor(0, 1, 0)
+        UiRect(5, 5)
+        UiFont("bold.ttf", 18)
+        UiText(tostring(math.floor(screen_bounds.top_right.x)) .. "," .. tostring(math.floor(screen_bounds.top_right.y)))
+        UiPop()
+
+        UiPush()
+        UiTranslate(screen_bounds.bottom_left.x, screen_bounds.bottom_left.y)
+        UiColor(1, 0, 1)
+        UiRect(5, 5)
+        UiFont("bold.ttf", 18)
+        UiText(tostring(math.floor(screen_bounds.bottom_left.x)) .. "," .. tostring(math.floor(screen_bounds.bottom_left.y)))
+        UiPop()
+
+        UiPush()
+        UiTranslate(screen_bounds.bottom_right.x, screen_bounds.bottom_right.y)
+        UiColor(0, 1, 1)
+        UiRect(5, 5)
+        UiFont("bold.ttf", 18)
+        UiText(tostring(math.floor(screen_bounds.bottom_right.x)) .. "," .. tostring(math.floor(screen_bounds.bottom_right.y)))
+        UiPop()
+    end
 end
