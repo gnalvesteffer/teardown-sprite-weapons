@@ -38,6 +38,7 @@ sprite_weapons.registry.register_weapon({
     reach = 200,
     min_impact_force = 0.05,
     max_impact_force = 0.1,
+    damage_per_impact_force = 20,
     penetration_iterations = 1,
     magazine_size = 25,
     ammo_image_size = { width = 8, height = 51 },

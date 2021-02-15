@@ -79,7 +79,7 @@ sprite_weapons.model.fire = function()
 
         local function damage_hit_npc()
             if npc_at_screen_hit_position ~= nil then
-                npc_at_screen_hit_position:damage(impact_force)
+                npc_at_screen_hit_position:damage(weapon_definition.damage_per_impact_force * impact_force)
                 bullet_position = npc_at_screen_hit_position.position
             end
         end

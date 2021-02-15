@@ -97,6 +97,7 @@ sprite_weapons.registry.register_weapon = function(definition)
         reach = definition.reach, -- distance in meters that the weapon can reach/hit/shoot
         min_impact_force = definition.min_impact_force, -- influences the size of holes made when shooting stuff
         max_impact_force = definition.max_impact_force, -- influences the size of holes made when shooting stuff
+        damage_per_impact_force = definition.damage_per_impact_force, -- used to determine the damage to apply to NPCs (damage_per_impact_force * impact force)
         penetration_iterations = definition.penetration_iterations, -- maximum iterations to perform bullet penetration / shooting through surfaces
         magazine_size = definition.magazine_size,
         ammo_image_path = "weapons/content/" .. definition.key .. "/images/ammo.png",
