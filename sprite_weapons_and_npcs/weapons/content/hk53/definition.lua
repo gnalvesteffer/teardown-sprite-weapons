@@ -36,8 +36,9 @@ sprite_weapons.registry.register_weapon({
     image_size = { width = 960, height = 540 },
     fire_rate = 750,
     reach = 200,
-    impact_force = 1.05,
-    max_penetration_iterations = 1,
+    min_impact_force = 0.05,
+    max_impact_force = 0.1,
+    penetration_iterations = 1,
     magazine_size = 25,
     ammo_image_size = { width = 8, height = 51 },
     magazine_image_size = { width = 31, height = 64 }

@@ -95,8 +95,9 @@ sprite_weapons.registry.register_weapon = function(definition)
         image_size = { width = definition.image_size.width, height = definition.image_size.height },
         fire_rate = 1 / (definition.fire_rate / 60), -- rounds per minute (gets converted to seconds per shot)
         reach = definition.reach, -- distance in meters that the weapon can reach/hit/shoot
-        impact_force = definition.impact_force, -- influences the size of holes made when shooting stuff
-        max_penetration_iterations = definition.max_penetration_iterations, -- maximum iterations to perform bullet penetration / shooting through surfaces
+        min_impact_force = definition.min_impact_force, -- influences the size of holes made when shooting stuff
+        max_impact_force = definition.max_impact_force, -- influences the size of holes made when shooting stuff
+        penetration_iterations = definition.penetration_iterations, -- maximum iterations to perform bullet penetration / shooting through surfaces
         magazine_size = definition.magazine_size,
         ammo_image_path = "weapons/content/" .. definition.key .. "/images/ammo.png",
         ammo_image_size = {

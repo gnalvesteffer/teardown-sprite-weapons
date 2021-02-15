@@ -67,27 +67,39 @@ sprite_weapons.model.fire = function()
     end
 
     local weapon_definition = sprite_weapons.state.get_current_weapon_definition()
+    local impact_force = weapon_definition.min_impact_force + ((weapon_definition.max_impact_force - weapon_definition.min_impact_force) * math.random())
     local muzzle_position = sprite_weapons.model.get_muzzle_position()
     local muzzle_direction = sprite_weapons.model.get_muzzle_direction()
 
-    local muzzle_screen_x, muzzle_screen_y = UiWorldToPixel(VecAdd(muzzle_position, muzzle_direction))
-    local npc_at_screen_hit_position = sprite_npcs.npc.get_npc_at_screen_position(Vec(muzzle_screen_x, muzzle_screen_y), { ["dead"] = true })
-    if npc_at_screen_hit_position ~= nil then
-        npc_at_screen_hit_position:damage(weapon_definition.impact_force)
-    end
+    local bullet_position = muzzle_position
+    local bullet_direction = muzzle_direction
+    for bullet_path_iteration = 1, 1 + weapon_definition.penetration_iterations do
+        local bullet_screen_x, bullet_screen_y = UiWorldToPixel(VecAdd(bullet_position, bullet_direction))
+        local npc_at_screen_hit_position = sprite_npcs.npc.get_npc_at_screen_position(Vec(bullet_screen_x, bullet_screen_y), { ["dead"] = true })
 
-    local did_hit, hit_distance = QueryRaycast(muzzle_position, muzzle_direction, weapon_definition.reach)
-    if did_hit then
-        local hit_position = VecAdd(sprite_weapons.model.get_muzzle_position(), VecScale(muzzle_direction, hit_distance))
-        MakeHole(hit_position, math.log(weapon_definition.impact_force) * 5, math.log(weapon_definition.impact_force) * 2, math.log(weapon_definition.impact_force))
-
-        for penetration_iterator = 1, math.random(0, weapon_definition.max_penetration_iterations) do
-            local impact_modifier = 1 / (penetration_iterator + 1)
-            did_hit, hit_distance = QueryRaycast(hit_position, muzzle_direction, weapon_definition.reach * impact_modifier)
-            if did_hit then
-                local hit_position = VecAdd(hit_position, VecScale(muzzle_direction, hit_distance))
-                MakeHole(hit_position, math.log(weapon_definition.impact_force) * 5 * impact_modifier, math.log(weapon_definition.impact_force) * 2 * impact_modifier, math.log(weapon_definition.impact_force) * impact_modifier)
+        local function damage_hit_npc()
+            if npc_at_screen_hit_position ~= nil then
+                npc_at_screen_hit_position:damage(impact_force)
+                bullet_position = npc_at_screen_hit_position.position
             end
+        end
+
+        local did_hit_surface, surface_hit_distance = QueryRaycast(bullet_position, bullet_direction, weapon_definition.reach)
+        if did_hit_surface then
+            local hit_position = VecAdd(bullet_position, VecScale(bullet_direction, surface_hit_distance))
+
+            -- check if NPC is closer than hit surface (which means they got hit instead of the surface)
+            if npc_at_screen_hit_position ~= nil and VecLength(VecSub(npc_at_screen_hit_position.position, muzzle_position)) <= surface_hit_distance then
+                damage_hit_npc()
+            else
+                local weak_material_impact_force = impact_force / (1 * bullet_path_iteration)
+                local medium_material_impact_force = impact_force / (1.5 * bullet_path_iteration)
+                local strong_material_impact_force = impact_force / (2 * bullet_path_iteration)
+                MakeHole(hit_position, weak_material_impact_force, medium_material_impact_force, strong_material_impact_force)
+                bullet_position = hit_position
+            end
+        else
+            damage_hit_npc()
         end
     end
 end
