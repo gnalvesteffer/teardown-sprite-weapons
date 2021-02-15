@@ -1,7 +1,6 @@
 #include "utilities.lua"
 #include "weapons/init.lua"
 #include "npcs/init.lua"
-#include "preload.lua"
 
 function init()
     sprite_weapons.init()

@@ -1,6 +1,7 @@
 #include "weapons/table.lua"
 #include "weapons/registry.lua"
 #include "weapons/register_weapons.lua"
+#include "weapons/preload.lua"
 #include "weapons/state.lua"
 #include "weapons/model.lua"
 #include "weapons/viewmodel.lua"
@@ -17,7 +18,7 @@ end
 
 sprite_weapons.draw = function()
     if not preloader.has_preloaded then
-        --preloader.preload_images() -- preloading reduces slowdown ingame, but results in longer load times at the start
+        preloader.preload_images() -- preloading reduces slowdown ingame, but results in longer load times at the start
     end
     sprite_weapons.viewmodel.draw()
 end
