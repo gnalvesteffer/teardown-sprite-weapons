@@ -123,16 +123,16 @@ sprite_weapons.model.can_switch_weapons = function()
     return not sprite_weapons.model.is_reloading() and not sprite_weapons.model.is_firing()
 end
 
-sprite_weapons.model.update_movement_time = function(deltaTime)
+sprite_weapons.model.update_movement_time = function(delta_time)
     local player_speed = VecLength(GetPlayerVelocity())
     if player_speed == 0 then
         sprite_weapons.state.movement_time = 0
     else
-        sprite_weapons.state.movement_time = sprite_weapons.state.movement_time + deltaTime
+        sprite_weapons.state.movement_time = sprite_weapons.state.movement_time + delta_time
     end
 end
 
-sprite_weapons.model.tick = function(deltaTime)
+sprite_weapons.model.tick = function(delta_time)
     -- disable weapon simulation if in vehicle
     sprite_weapons.state.is_enabled = GetPlayerVehicle() == 0
     if not sprite_weapons.state.is_enabled then
@@ -207,7 +207,7 @@ sprite_weapons.model.tick = function(deltaTime)
         sprite_weapons.state.next_weapon_index_delta = 0
     end
 
-    sprite_weapons.model.update_movement_time(deltaTime)
+    sprite_weapons.model.update_movement_time(delta_time)
 
-    sprite_weapons.state.weapon_state_time = sprite_weapons.state.weapon_state_time + deltaTime
+    sprite_weapons.state.weapon_state_time = sprite_weapons.state.weapon_state_time + delta_time
 end 

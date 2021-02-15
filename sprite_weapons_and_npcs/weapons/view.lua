@@ -78,7 +78,7 @@ local function draw_weapon_name()
     UiPop()
 end
 
-sprite_weapons.view.tick = function(deltaTime)
+sprite_weapons.view.tick = function(delta_time)
 end
 
 sprite_weapons.view.draw = function()

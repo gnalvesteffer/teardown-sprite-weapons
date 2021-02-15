@@ -1,7 +1,8 @@
-sprite_npcs.registry.register_npc({
+sprite_npcs.npc_registry.register_npc({
     key = "test",
     name = "Test Bad Guy",
     health = 10,
+    ai_key = "test",
     states = {
         idle = {
             total_frames = 3,

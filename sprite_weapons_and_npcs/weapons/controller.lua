@@ -1,6 +1,6 @@
 sprite_weapons.controller = {}
 
-sprite_weapons.controller.tick = function(deltaTime)
+sprite_weapons.controller.tick = function(delta_time)
     sprite_weapons.state.is_trigger_pulled = InputDown("lmb")
     sprite_weapons.state.is_aiming = InputDown("rmb")
     sprite_weapons.state.is_attempting_reload = InputPressed("r")

@@ -31,13 +31,14 @@ end
 local next_npc_id = 1
 sprite_npcs.npc.spawn = function(npc_key, transform)
     local npc = {
-        npc_definition = sprite_npcs.registry.registered_npcs[npc_key],
+        id = next_npc_id,
+        npc_definition = sprite_npcs.npc_registry.registered_npcs[npc_key],
+        ai_definition = sprite_npcs.ai_registry.registered_ai[sprite_npcs.npc_registry.registered_npcs[npc_key].ai_key],
         position = transform.pos,
         state = "idle",
         state_time = 0,
         time = 0,
-        id = next_npc_id,
-        health = sprite_npcs.registry.registered_npcs[npc_key].health,
+        health = sprite_npcs.npc_registry.registered_npcs[npc_key].health,
         get_current_state_definition = function(self)
             return self.npc_definition.states[self.state]
         end,
@@ -120,14 +121,22 @@ sprite_npcs.npc.spawn = function(npc_key, transform)
                 self.state = "idle"
             end
         end,
-        tick = function(self, deltaTime)
+        init_ai = function(self)
+            self.ai_definition.init(self)
+        end,
+        tick_ai = function(self, delta_time)
+            self.ai_definition.tick(self, delta_time)
+        end,
+        tick = function(self, delta_time)
+            self:tick_ai(self, delta_time)
             self:draw_sprite()
             self:update_state()
-            self.time = self.time + deltaTime
-            self.state_time = self.state_time + deltaTime
+            self.time = self.time + delta_time
+            self.state_time = self.state_time + delta_time
         end
     }
     table.insert(sprite_npcs.npc.spawned_npcs, npc)
     next_npc_id = next_npc_id + 1
+    npc:init_ai()
     return npc
 end

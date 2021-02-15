@@ -7,9 +7,9 @@ function init()
     sprite_npcs.init()
 end
 
-function tick(deltaTime)
-    sprite_weapons.tick(deltaTime)
-    sprite_npcs.tick(deltaTime)
+function tick(delta_time)
+    sprite_weapons.tick(delta_time)
+    sprite_npcs.tick(delta_time)
 end
 
 function draw()

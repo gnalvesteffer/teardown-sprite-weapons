@@ -10,10 +10,10 @@
 sprite_weapons.init = function()
 end
 
-sprite_weapons.tick = function(deltaTime)
-    sprite_weapons.controller.tick(deltaTime)
-    sprite_weapons.model.tick(deltaTime)
-    sprite_weapons.view.tick(deltaTime)
+sprite_weapons.tick = function(delta_time)
+    sprite_weapons.controller.tick(delta_time)
+    sprite_weapons.model.tick(delta_time)
+    sprite_weapons.view.tick(delta_time)
 end
 
 sprite_weapons.draw = function()

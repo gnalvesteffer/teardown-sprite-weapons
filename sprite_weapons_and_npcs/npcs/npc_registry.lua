@@ -1,15 +1,15 @@
-sprite_npcs.registry = {}
-sprite_npcs.registry.registered_npcs = {}
+sprite_npcs.npc_registry = {}
+sprite_npcs.npc_registry.registered_npcs = {}
 
 local function build_frames(npc_key, animation_name, total_frames, is_reversed)
     local frames = {}
     if is_reversed then
         for frame_number = total_frames, 1, -1 do
-            table.insert(frames, LoadSprite("npcs/content/" .. npc_key .. "/images/" .. animation_name .. "." .. frame_number .. ".png"))
+            table.insert(frames, LoadSprite("npcs/content/npcs/" .. npc_key .. "/images/" .. animation_name .. "." .. frame_number .. ".png"))
         end
     else
         for frame_number = 1, total_frames do
-            table.insert(frames, LoadSprite("npcs/content/" .. npc_key .. "/images/" .. animation_name .. "." .. frame_number .. ".png"))
+            table.insert(frames, LoadSprite("npcs/content/npcs/" .. npc_key .. "/images/" .. animation_name .. "." .. frame_number .. ".png"))
         end
     end
     return frames
@@ -18,16 +18,17 @@ end
 local function load_sounds(npc_key, sound_name, total_sounds)
     local sounds = {}
     for sound_number = 1, total_sounds do
-        table.insert(sounds, LoadSound("npcs/content/" .. npc_key .. "/sounds/" .. sound_name .. "." .. sound_number .. ".ogg"))
+        table.insert(sounds, LoadSound("npcs/content/npcs/" .. npc_key .. "/sounds/" .. sound_name .. "." .. sound_number .. ".ogg"))
     end
     return sounds
 end
 
-sprite_npcs.registry.register_npc = function(definition)
-    sprite_npcs.registry.registered_npcs[definition.key] = {
+sprite_npcs.npc_registry.register_npc = function(definition)
+    sprite_npcs.npc_registry.registered_npcs[definition.key] = {
         key = definition.key,
         name = definition.name,
         health = definition.health,
+        ai_key = definition.ai_key,
         states = {
             idle = {
                 frames = build_frames(definition.key, "idle", definition.states.idle.total_frames, false),

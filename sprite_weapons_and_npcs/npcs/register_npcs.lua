@@ -1,1 +1,1 @@
-#include "npcs/content/test/definition.lua"
+#include "npcs/content/npcs/test/definition.lua"
