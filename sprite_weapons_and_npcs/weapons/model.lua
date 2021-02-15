@@ -73,6 +73,7 @@ sprite_weapons.model.fire = function()
 
     local bullet_position = muzzle_position
     local bullet_direction = muzzle_direction
+    local penetration_skip_distance = VecScale(bullet_direction, 0.2)
     for bullet_path_iteration = 1, 1 + weapon_definition.penetration_iterations do
         local bullet_screen_x, bullet_screen_y = UiWorldToPixel(VecAdd(bullet_position, bullet_direction))
         local npc_at_screen_hit_position = sprite_npcs.npc.get_npc_at_screen_position(Vec(bullet_screen_x, bullet_screen_y), { ["dead"] = true })
@@ -80,7 +81,7 @@ sprite_weapons.model.fire = function()
         local function damage_hit_npc()
             if npc_at_screen_hit_position ~= nil then
                 npc_at_screen_hit_position:damage(weapon_definition.damage_per_impact_force * impact_force)
-                bullet_position = npc_at_screen_hit_position.position
+                bullet_position = VecAdd(npc_at_screen_hit_position.position, penetration_skip_distance)
             end
         end
 
@@ -96,7 +97,7 @@ sprite_weapons.model.fire = function()
                 local medium_material_impact_force = impact_force / (1.5 * bullet_path_iteration)
                 local strong_material_impact_force = impact_force / (2 * bullet_path_iteration)
                 MakeHole(hit_position, weak_material_impact_force, medium_material_impact_force, strong_material_impact_force)
-                bullet_position = hit_position
+                bullet_position = VecAdd(hit_position, penetration_skip_distance)
             end
         else
             damage_hit_npc()
