@@ -1,7 +1,7 @@
 sprite_npcs.registry.register_npc({
     key = "test",
     name = "Test Bad Guy",
-    health = 3,
+    health = 5,
     states = {
         idle = {
             total_frames = 3,

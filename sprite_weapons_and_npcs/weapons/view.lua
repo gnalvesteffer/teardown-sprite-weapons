@@ -1,4 +1,4 @@
-sprite_weapons.viewmodel = {}
+sprite_weapons.view = {}
 
 local function calculate_current_weapon_frame()
     local weapon_definition = sprite_weapons.state.get_current_weapon_definition()
@@ -31,9 +31,11 @@ local function get_weapon_sway_amount()
 end
 
 local function draw_weapon()
+    local weapon_definition = sprite_weapons.state.get_current_weapon_definition()
     local weapon_sway_amount = get_weapon_sway_amount()
     UiPush()
     UiAlign("top left")
+    UiScale(1920 / weapon_definition.image_size.width, 1080 / weapon_definition.image_size.height) -- scale weapon image to fill screen
     UiTranslate(weapon_sway_amount.x, weapon_sway_amount.y)
     UiImage(get_current_weapon_frame_image_path())
     UiPop()
@@ -76,10 +78,10 @@ local function draw_weapon_name()
     UiPop()
 end
 
-sprite_weapons.viewmodel.tick = function(deltaTime)
+sprite_weapons.view.tick = function(deltaTime)
 end
 
-sprite_weapons.viewmodel.draw = function()
+sprite_weapons.view.draw = function()
     if not sprite_weapons.state.is_enabled then
         return
     end

@@ -92,6 +92,7 @@ sprite_weapons.registry.register_weapon = function(definition)
                 sounds = load_sounds(definition.key, "reload", definition.states.reload.total_sounds)
             },
         },
+        image_size = { width = definition.image_size.width, height = definition.image_size.height },
         fire_rate = 1 / (definition.fire_rate / 60), -- rounds per minute (gets converted to seconds per shot)
         reach = definition.reach, -- distance in meters that the weapon can reach/hit/shoot
         impact_force = definition.impact_force, -- influences the size of holes made when shooting stuff

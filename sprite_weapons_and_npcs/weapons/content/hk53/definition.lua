@@ -33,6 +33,7 @@ sprite_weapons.registry.register_weapon({
             total_sounds = 1
         },
     },
+    image_size = { width = 960, height = 540 },
     fire_rate = 750,
     reach = 200,
     impact_force = 1.05,
