@@ -1,6 +1,6 @@
 <scene id_="1055849408" open_="true" version="0.5.5" shadowVolume="200 100 200">
 	<environment id_="184429568" template="sunny" skyboxrot="180"/>
-	<spawnpoint id_="117709840" pos="-0.9 0.0 2.7"/>
+	<spawnpoint id_="117709840" pos="-0.9 0.0 2.7" rot="0.0 180.0 0.0"/>
 	<voxbox id_="362763904" open_="true" name="platform" pos="-5.0 0.0 -5.0" texture="1 0.5" size="100 1 100" color="0.43 0.43 0.43">
 		<voxbox id_="1993595776" pos="0.0 0.0 0.0" rot="0.0 0.0 90.0" texture="3 0.5" size="10 1 100" color="0.42 0.17 0.11"/>
 		<voxbox id_="70914280" pos="9.9 0.0 10.1" rot="0.0 180.0 90.0" texture="3 0.5" size="10 1 100" color="0.42 0.17 0.11"/>
@@ -72,6 +72,18 @@
 							<vox id_="256195856" pos="-2.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
 						</vox>
 					</vox>
+				</vox>
+			</vox>
+			<vox id_="533102368" open_="true" pos="5.2 0.1 16.8" rot="0.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25">
+				<vox id_="238893296" open_="true" pos="-1.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25">
+					<vox id_="850840256" open_="true" pos="0.0 1.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25">
+						<vox id_="1229726976" open_="true" pos="2.0 -1.0 0.0" rot="0.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25">
+							<vox id_="2052581760" pos="0.0 0.2 0.0" rot="0.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
+						</vox>
+					</vox>
+				</vox>
+				<vox id_="88347920" open_="true" pos="-2.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25">
+					<vox id_="530284128" pos="0.0 0.5 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
 				</vox>
 			</vox>
 		</voxbox>
