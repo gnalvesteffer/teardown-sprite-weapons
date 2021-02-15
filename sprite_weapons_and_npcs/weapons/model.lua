@@ -73,7 +73,7 @@ sprite_weapons.model.fire = function()
 
     local bullet_position = muzzle_position
     local bullet_direction = muzzle_direction
-    local penetration_skip_distance = VecScale(bullet_direction, 0.2)
+    local penetration_skip_distance = VecScale(bullet_direction, 0.2) -- upon penetration, skip ahead this distance in meters so the same voxels don't get hit
     for bullet_path_iteration = 1, 1 + weapon_definition.penetration_iterations do
         local bullet_screen_x, bullet_screen_y = UiWorldToPixel(VecAdd(bullet_position, bullet_direction))
         local npc_at_screen_hit_position = sprite_npcs.npc.get_npc_at_screen_position(Vec(bullet_screen_x, bullet_screen_y), { ["dead"] = true })
