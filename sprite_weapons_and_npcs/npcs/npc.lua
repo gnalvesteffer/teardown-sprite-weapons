@@ -56,7 +56,8 @@ sprite_npcs.npc.spawn = function(npc_key, transform)
             local look_at_position = GetPlayerTransform().pos
             look_at_position[2] = transform.pos[2] -- prevents sprite from rotating upwards/downwards (makes it stand straight-up)
 
-            transform.rot = GetCameraTransform().rot -- makes npc sprite face player / behave like billboard
+            transform.rot = QuatLookAt(transform.pos, look_at_position) -- makes npc sprite face player / behave like billboard
+            transform.rot = QuatRotateQuat(transform.rot, QuatEuler(0, 180, 0))
             return transform
         end,
         get_screen_bounding_box = function(self)
