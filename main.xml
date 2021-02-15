@@ -133,6 +133,11 @@
 		<location id_="586124224" name="npc_spawn_test" tags="npc_spawn_test" pos="3.6 0.1 0.1"/>
 		<location id_="1085866752" name="npc_spawn_test" tags="npc_spawn_test" pos="5.1 0.1 0.1"/>
 		<location id_="94901920" name="npc_spawn_test" tags="npc_spawn_test" pos="5.2 0.1 4.5"/>
+		<location id_="2005523968" name="npc_spawn_test" tags="npc_spawn_test" pos="1.3 0.1 4.5"/>
+		<location id_="1482187136" name="npc_spawn_test" tags="npc_spawn_test" pos="2.4 0.1 4.9"/>
+		<location id_="1819914752" name="npc_spawn_test" tags="npc_spawn_test" pos="2.1 0.1 6.3"/>
+		<location id_="743158080" name="npc_spawn_test" tags="npc_spawn_test" pos="3.5 0.1 6.3"/>
+		<location id_="360338912" name="npc_spawn_test" tags="npc_spawn_test" pos="3.5 0.1 4.4"/>
 	</group>
 	<script id_="1653377536" file="MOD/sprite_weapons_and_npcs/init.lua"/>
 	<layers/>

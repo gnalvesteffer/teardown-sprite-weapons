@@ -16,7 +16,8 @@ sprite_npcs.npc.get_npc_at_screen_position = function(screen_position, states_to
         states_to_ignore = {}
     end
 
-    for npc_iterator, npc in ipairs(sprite_npcs.npc.spawned_npcs) do
+    for npc_iterator = #sprite_npcs.npc.spawned_npcs, 1, -1 do
+        local npc = sprite_npcs.npc.spawned_npcs[npc_iterator]
         if states_to_ignore[npc.state] == nil then
             local bounds = npc:get_screen_bounding_box()
             if screen_position[1] >= bounds.top_left.x and screen_position[1] <= bounds.top_right.x and screen_position[2] >= bounds.top_left.y and screen_position[2] <= bounds.bottom_left.y then
@@ -84,14 +85,24 @@ sprite_npcs.npc.spawn = function(npc_key, transform)
         set_state = function(self, state)
             self.state = state
             self.state_time = 0
+            local state_definition = self:get_current_state_definition()
+            PlaySound(state_definition.sounds[math.random(1, #state_definition.sounds)], self.position)
         end,
         damage = function(self, amount)
+            if amount <= 0 then
+                return
+            end
             self.health = math.max(self.health - amount, 0)
             if self.health == 0 and self.state ~= "dead" then
-                self:kill()
+                self:die()
+            else
+                if self.state ~= "hurt" then
+                    self:set_state("hurt")
+                    local state_definition = self:get_current_state_definition()
+                end
             end
         end,
-        kill = function(self)
+        die = function(self)
             self:set_state("dead")
         end,
         draw_sprite = function(self)
@@ -100,8 +111,15 @@ sprite_npcs.npc.spawn = function(npc_key, transform)
             transform.pos[2] = transform.pos[2] + state_definition.npc_height / 2 -- vertically aligns the position to the bottom of the sprite
             DrawSprite(self:get_current_frame(), transform, state_definition.npc_width, state_definition.npc_height, 1, 1, 1, 1, true)
         end,
+        update_state = function(self)
+            local state_definition = self:get_current_state_definition()
+            if self.state == "hurt" and self.state_time > state_definition.duration then
+                self.state = "idle"
+            end
+        end,
         tick = function(self, deltaTime)
             self:draw_sprite()
+            self:update_state()
             self.time = self.time + deltaTime
             self.state_time = self.state_time + deltaTime
         end

@@ -40,6 +40,18 @@ sprite_npcs.registry.register_npc = function(definition)
                 duration = definition.states.idle.total_frames / definition.states.idle.frame_rate,
                 animation_mode = "loop"
             },
+            hurt = {
+                frames = build_frames(definition.key, "hurt", definition.states.hurt.total_frames, false),
+                total_frames = definition.states.hurt.total_frames,
+                frame_rate = definition.states.hurt.frame_rate,
+                image_size = definition.states.hurt.image_size,
+                aspect_ratio = definition.states.hurt.image_size.width / definition.states.hurt.image_size.height, -- width:height
+                npc_width = definition.states.hurt.npc_height * definition.states.hurt.image_size.width / definition.states.hurt.image_size.height, -- width of NPC in meters during this animation state
+                npc_height = definition.states.hurt.npc_height, -- height of NPC in meters during this animation state
+                duration = definition.states.hurt.total_frames / definition.states.hurt.frame_rate,
+                animation_mode = "oneshot",
+                sounds = load_sounds(definition.key, "hurt", definition.states.hurt.total_sounds)
+            },
             dead = {
                 frames = build_frames(definition.key, "dead", definition.states.dead.total_frames, false),
                 total_frames = definition.states.dead.total_frames,
@@ -49,7 +61,8 @@ sprite_npcs.registry.register_npc = function(definition)
                 npc_width = definition.states.dead.npc_height * definition.states.dead.image_size.width / definition.states.dead.image_size.height, -- width of NPC in meters during this animation state
                 npc_height = definition.states.dead.npc_height, -- height of NPC in meters during this animation state
                 duration = definition.states.dead.total_frames / definition.states.dead.frame_rate,
-                animation_mode = "oneshot"
+                animation_mode = "oneshot",
+                sounds = load_sounds(definition.key, "dead", definition.states.dead.total_sounds)
             },
         }
     }
