@@ -28,6 +28,7 @@ sprite_npcs.npc.get_npc_at_screen_position = function(screen_position, states_to
     return nil
 end
 
+local next_npc_id = 1
 sprite_npcs.npc.spawn = function(npc_key, transform)
     local npc = {
         npc_definition = sprite_npcs.registry.registered_npcs[npc_key],
@@ -35,6 +36,7 @@ sprite_npcs.npc.spawn = function(npc_key, transform)
         state = "idle",
         state_time = 0,
         time = 0,
+        id = next_npc_id,
         health = sprite_npcs.registry.registered_npcs[npc_key].health,
         get_current_state_definition = function(self)
             return self.npc_definition.states[self.state]
@@ -43,7 +45,7 @@ sprite_npcs.npc.spawn = function(npc_key, transform)
             local state_definition = self:get_current_state_definition()
             local frame_number = 1
             if state_definition.animation_mode == "loop" then
-                frame_number = math.floor((self.state_time * state_definition.frame_rate % state_definition.total_frames) + 1)
+                frame_number = math.floor(((self.state_time + self.id) * state_definition.frame_rate % state_definition.total_frames) + 1)
             else
                 if state_definition.animation_mode == "oneshot" then
                     frame_number = math.min(math.floor(self.state_time * state_definition.frame_rate) + 1, state_definition.total_frames)
@@ -125,5 +127,6 @@ sprite_npcs.npc.spawn = function(npc_key, transform)
         end
     }
     table.insert(sprite_npcs.npc.spawned_npcs, npc)
+    next_npc_id = next_npc_id + 1
     return npc
 end
