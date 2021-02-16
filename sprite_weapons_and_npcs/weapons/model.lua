@@ -72,7 +72,7 @@ sprite_weapons.model.fire = function()
     local muzzle_direction = sprite_weapons.model.get_muzzle_direction()
 
     local bullet_position = muzzle_position
-    local bullet_direction = muzzle_direction
+    local bullet_direction = VecAdd(muzzle_direction, VecScale(Vec(math.random() - math.random(), math.random() - math.random(), math.random() - math.random()), weapon_definition.dispersion))
     local penetration_skip_distance = VecScale(bullet_direction, 0.1) -- upon penetration, skip ahead this distance in meters so the same voxels don't get hit
     for bullet_path_iteration = 1, 1 + weapon_definition.penetration_iterations do
         local bullet_screen_x, bullet_screen_y = UiWorldToPixel(VecAdd(bullet_position, bullet_direction))

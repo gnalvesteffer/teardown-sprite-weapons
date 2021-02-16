@@ -36,6 +36,7 @@ sprite_weapons.registry.register_weapon({
     image_size = { width = 960, height = 540 },
     fire_rate = 900,
     reach = 400,
+    dispersion = 0.015,
     min_impact_force = 0.08,
     max_impact_force = 0.15,
     damage_per_impact_force = 20,
