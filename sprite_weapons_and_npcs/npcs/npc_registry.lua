@@ -41,7 +41,7 @@ sprite_npcs.npc_registry.register_npc = function(definition)
                 npc_height = definition.states.idle.npc_height, -- height of NPC in meters during this animation state
                 duration = definition.states.idle.total_frames / definition.states.idle.frame_rate,
                 animation_mode = "loop",
-                sounds = load_sounds(definition.key, "idle", definition.states.hurt.total_sounds)
+                sounds = load_sounds(definition.key, "idle", definition.states.idle.total_sounds)
             },
             aim = {
                 frames = build_frames(definition.key, "aim", definition.states.aim.total_frames, false),
@@ -54,7 +54,7 @@ sprite_npcs.npc_registry.register_npc = function(definition)
                 npc_height = definition.states.aim.npc_height, -- height of NPC in meters during this animation state
                 duration = definition.states.aim.total_frames / definition.states.aim.frame_rate,
                 animation_mode = "oneshot",
-                sounds = load_sounds(definition.key, "aim", definition.states.hurt.total_sounds)
+                sounds = load_sounds(definition.key, "aim", definition.states.aim.total_sounds)
             },
             aim_idle = {
                 frames = build_frames(definition.key, "aim_idle", definition.states.aim_idle.total_frames, false),
@@ -67,7 +67,7 @@ sprite_npcs.npc_registry.register_npc = function(definition)
                 npc_height = definition.states.aim_idle.npc_height, -- height of NPC in meters during this animation state
                 duration = definition.states.aim_idle.total_frames / definition.states.aim_idle.frame_rate,
                 animation_mode = "loop",
-                sounds = load_sounds(definition.key, "aim_idle", definition.states.hurt.total_sounds)
+                sounds = load_sounds(definition.key, "aim_idle", definition.states.aim_idle.total_sounds)
             },
             fire = {
                 frames = build_frames(definition.key, "fire", definition.states.fire.total_frames, false),
@@ -80,7 +80,7 @@ sprite_npcs.npc_registry.register_npc = function(definition)
                 npc_height = definition.states.fire.npc_height, -- height of NPC in meters during this animation state
                 duration = definition.states.fire.total_frames / definition.states.fire.frame_rate,
                 animation_mode = "oneshot",
-                sounds = load_sounds(definition.key, "fire", definition.states.hurt.total_sounds)
+                sounds = load_sounds(definition.key, "fire", definition.states.fire.total_sounds)
             },
             hurt = {
                 frames = build_frames(definition.key, "hurt", definition.states.hurt.total_frames, false),
