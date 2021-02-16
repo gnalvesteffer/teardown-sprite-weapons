@@ -67,7 +67,7 @@ sprite_npcs.npc.spawn = function(npc_key, transform)
             transform.rot = QuatRotateQuat(transform.rot, QuatEuler(0, 180, 0))
             return transform
         end,
-        get_screen_bounding_box = function(self)
+        get_world_bounding_box = function(self)
             local state_definition = self:get_current_state_definition()
             local transform = self:get_transform()
             transform.pos[2] = transform.pos[2] + state_definition.draw_height_offset -- offset height
@@ -76,11 +76,20 @@ sprite_npcs.npc.spawn = function(npc_key, transform)
             local top_right_world_position = TransformToParentPoint(transform, Vec(state_definition.npc_width / 2, state_definition.npc_height, 0))
             local bottom_left_world_position = TransformToParentPoint(transform, Vec(-state_definition.npc_width / 2, 0, 0))
             local bottom_right_world_position = TransformToParentPoint(transform, Vec(state_definition.npc_width / 2, 0, 0))
+            return {
+                top_left = top_left_world_position,
+                top_right = top_right_world_position,
+                bottom_left = bottom_left_world_position,
+                bottom_right = bottom_right_world_position,
+            }
+        end,
+        get_screen_bounding_box = function(self)
+            local world_bounds = self:get_world_bounding_box()
 
-            local top_left_screen_x, top_left_screen_y = UiWorldToPixel(top_left_world_position)
-            local top_right_screen_x, top_right_screen_y = UiWorldToPixel(top_right_world_position)
-            local bottom_left_screen_x, bottom_left_screen_y = UiWorldToPixel(bottom_left_world_position)
-            local bottom_right_screen_x, bottom_right_screen_y = UiWorldToPixel(bottom_right_world_position)
+            local top_left_screen_x, top_left_screen_y = UiWorldToPixel(world_bounds.top_left)
+            local top_right_screen_x, top_right_screen_y = UiWorldToPixel(world_bounds.top_right)
+            local bottom_left_screen_x, bottom_left_screen_y = UiWorldToPixel(world_bounds.bottom_left)
+            local bottom_right_screen_x, bottom_right_screen_y = UiWorldToPixel(world_bounds.bottom_right)
 
             return {
                 top_left = { x = top_left_screen_x, y = top_left_screen_y },
