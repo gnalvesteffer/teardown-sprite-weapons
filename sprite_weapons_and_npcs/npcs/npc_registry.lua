@@ -56,6 +56,32 @@ sprite_npcs.npc_registry.register_npc = function(definition)
                 animation_mode = "oneshot",
                 sounds = load_sounds(definition.key, "aim", definition.states.hurt.total_sounds)
             },
+            aim_idle = {
+                frames = build_frames(definition.key, "aim_idle", definition.states.aim_idle.total_frames, false),
+                total_frames = definition.states.aim_idle.total_frames,
+                frame_rate = definition.states.aim_idle.frame_rate,
+                image_size = definition.states.aim_idle.image_size,
+                aspect_ratio = definition.states.aim_idle.image_size.width / definition.states.aim_idle.image_size.height, -- width:height
+                draw_height_offset = definition.states.aim_idle.draw_height_offset,
+                npc_width = definition.states.aim_idle.npc_height * definition.states.aim_idle.image_size.width / definition.states.aim_idle.image_size.height, -- width of NPC in meters during this animation state
+                npc_height = definition.states.aim_idle.npc_height, -- height of NPC in meters during this animation state
+                duration = definition.states.aim_idle.total_frames / definition.states.aim_idle.frame_rate,
+                animation_mode = "loop",
+                sounds = load_sounds(definition.key, "aim_idle", definition.states.hurt.total_sounds)
+            },
+            fire = {
+                frames = build_frames(definition.key, "fire", definition.states.fire.total_frames, false),
+                total_frames = definition.states.fire.total_frames,
+                frame_rate = definition.states.fire.frame_rate,
+                image_size = definition.states.fire.image_size,
+                aspect_ratio = definition.states.fire.image_size.width / definition.states.fire.image_size.height, -- width:height
+                draw_height_offset = definition.states.fire.draw_height_offset,
+                npc_width = definition.states.fire.npc_height * definition.states.fire.image_size.width / definition.states.fire.image_size.height, -- width of NPC in meters during this animation state
+                npc_height = definition.states.fire.npc_height, -- height of NPC in meters during this animation state
+                duration = definition.states.fire.total_frames / definition.states.fire.frame_rate,
+                animation_mode = "oneshot",
+                sounds = load_sounds(definition.key, "fire", definition.states.hurt.total_sounds)
+            },
             hurt = {
                 frames = build_frames(definition.key, "hurt", definition.states.hurt.total_frames, false),
                 total_frames = definition.states.hurt.total_frames,
