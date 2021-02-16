@@ -5,9 +5,17 @@ sprite_weapons.model.get_muzzle_position = function()
 end
 
 sprite_weapons.model.get_muzzle_direction = function()
+    return TransformToParentVec(GetCameraTransform(), Vec(0, sprite_weapons.model.get_recoil_climb(), -1))
+end
+
+sprite_weapons.model.get_recoil_climb = function()
     local weapon_definition = sprite_weapons.state.get_current_weapon_definition()
-    local recoil_climb = math.clamp(sprite_weapons.state.firing_duration * weapon_definition.recoil_climb_rate, 0, weapon_definition.recoil_max_climb)
-    return TransformToParentVec(GetCameraTransform(), Vec(0, recoil_climb, -1))
+    return math.clamp(sprite_weapons.state.firing_duration * weapon_definition.recoil_climb_rate, 0, weapon_definition.recoil_max_climb)
+end
+
+sprite_weapons.model.get_recoil_dispersion = function()
+    local weapon_definition = sprite_weapons.state.get_current_weapon_definition()
+    return math.clamp(sprite_weapons.state.firing_duration * weapon_definition.recoil_dispersion_rate, 0, weapon_definition.recoil_max_dispersion)
 end
 
 sprite_weapons.model.get_random_weapon_state_sound = function(weapon_state)
@@ -53,7 +61,7 @@ end
 sprite_weapons.model.fire = function()
     local time = GetTime()
     local weapon_definition = sprite_weapons.state.get_current_weapon_definition()
-    local delta_time_since_last_shot = time - sprite_weapons.state.last_fire_time 
+    local delta_time_since_last_shot = time - sprite_weapons.state.last_fire_time
     if delta_time_since_last_shot <= weapon_definition.fire_rate * 2 then
         sprite_weapons.state.firing_duration = sprite_weapons.state.firing_duration + delta_time_since_last_shot
     else
@@ -79,10 +87,8 @@ sprite_weapons.model.fire = function()
     local impact_force = weapon_definition.min_impact_force + ((weapon_definition.max_impact_force - weapon_definition.min_impact_force) * math.random())
     local muzzle_position = sprite_weapons.model.get_muzzle_position()
     local muzzle_direction = sprite_weapons.model.get_muzzle_direction()
-
     local bullet_position = muzzle_position
-    local recoil_dispersion_amount = math.clamp(sprite_weapons.state.firing_duration * weapon_definition.recoil_dispersion_rate, 0, weapon_definition.recoil_max_dispersion)
-    local bullet_direction = VecAdd(muzzle_direction, VecScale(Vec(math.random() - math.random(), math.random() - math.random(), math.random() - math.random()), recoil_dispersion_amount))
+    local bullet_direction = VecAdd(muzzle_direction, VecScale(Vec(math.random() - math.random(), math.random() - math.random(), math.random() - math.random()), sprite_weapons.model.get_recoil_dispersion()))
     local penetration_skip_distance = VecScale(bullet_direction, 0.1) -- upon penetration, skip ahead this distance in meters so the same voxels don't get hit
     for bullet_path_iteration = 1, 1 + weapon_definition.penetration_iterations do
         local bullet_screen_x, bullet_screen_y = UiWorldToPixel(VecAdd(bullet_position, bullet_direction))
