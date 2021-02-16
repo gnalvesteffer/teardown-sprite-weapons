@@ -13,6 +13,7 @@ sprite_weapons.state = {
     weapon_state = "idle",
     weapon_state_time = 0,
     last_fire_time = -1,
+    firing_duration = 0,
     is_trigger_pulled = false,
     is_aiming = false,
     is_attempting_reload = false,

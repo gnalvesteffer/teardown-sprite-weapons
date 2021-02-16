@@ -95,7 +95,10 @@ sprite_weapons.registry.register_weapon = function(definition)
         image_size = { width = definition.image_size.width, height = definition.image_size.height },
         fire_rate = 1 / (definition.fire_rate / 60), -- rounds per minute (gets converted to seconds per shot)
         reach = definition.reach, -- distance in meters that the weapon can reach/hit/shoot
-        dispersion = definition.dispersion, -- causes bullets to fire out at a larger angle (recommended range: 0.0 - 1.0)
+        recoil_dispersion_rate = definition.recoil_dispersion_rate, -- the amount of dispersion increased per second of continuous fire
+        recoil_max_dispersion = definition.recoil_max_dispersion, -- the max amount of dispersion that can be applied during recoil
+        recoil_climb_rate = definition.recoil_climb_rate,
+        recoil_max_climb = definition.recoil_max_climb,
         min_impact_force = definition.min_impact_force, -- influences the size of holes made when shooting stuff
         max_impact_force = definition.max_impact_force, -- influences the size of holes made when shooting stuff
         damage_per_impact_force = definition.damage_per_impact_force, -- used to determine the damage to apply to NPCs (damage_per_impact_force * impact force)
