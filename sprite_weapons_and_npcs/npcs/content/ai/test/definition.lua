@@ -1,6 +1,6 @@
 local function can_npc_see_player(npc)
     local npc_height = npc:get_current_state_definition().npc_height
-    local npc_eye_position = VecAdd(npc.position, Vec(0, npc_height, 0)) -- assume npc's eyes are at the top of the sprite
+    local npc_eye_position = VecAdd(npc.position, Vec(0, npc_height * 0.9, 0)) -- assume the npc's eyes are near the top of the sprite
     local player_eye_position = GetCameraTransform().pos
     local npc_direction = VecNormalize(VecSub(player_eye_position, npc_eye_position))
     local npc_distance_to_player = VecLength(VecSub(npc_eye_position, player_eye_position))
