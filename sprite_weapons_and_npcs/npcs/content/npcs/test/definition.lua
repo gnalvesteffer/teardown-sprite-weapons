@@ -23,7 +23,7 @@ sprite_npcs.npc_registry.register_npc({
         aim_idle = {
             total_frames = 2,
             frame_rate = 1,
-            image_size = { width = 91, height = 246 },
+            image_size = { width = 111, height = 243 },
             npc_height = 2,
             draw_height_offset = -0.1,
             total_sounds = 0
@@ -31,7 +31,7 @@ sprite_npcs.npc_registry.register_npc({
         fire = {
             total_frames = 2,
             frame_rate = 10,
-            image_size = { width = 91, height = 246 },
+            image_size = { width = 111, height = 243 },
             npc_height = 2,
             draw_height_offset = -0.1,
             total_sounds = 1

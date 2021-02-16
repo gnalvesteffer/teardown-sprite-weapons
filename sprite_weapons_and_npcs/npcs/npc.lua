@@ -98,10 +98,14 @@ sprite_npcs.npc.spawn = function(npc_key, transform)
                 bottom_right = { x = bottom_right_screen_x, y = bottom_right_screen_y },
             }
         end,
-        set_state = function(self, state)
-            if self.state == state then
+        set_state = function(self, state, force)
+            if not force and self.state == state then
                 return
             end
+            if force == nil then
+                force = false
+            end
+
             self.state = state
             self.state_time = 0
             local state_definition = self:get_current_state_definition()
