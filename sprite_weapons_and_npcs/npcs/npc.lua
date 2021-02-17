@@ -131,7 +131,7 @@ sprite_npcs.npc.spawn = function(npc_key, transform)
             local state_definition = self:get_current_state_definition()
             local transform = self:get_transform()
             transform.pos[2] = (transform.pos[2] + state_definition.npc_height / 2) + state_definition.draw_height_offset -- vertically aligns the position to the bottom of the sprite
-            local is_under_something = QueryRaycast(VecAdd(self.position, Vec(0, state_definition.npc_height, 0)), Vec(0, 1, 0), 20)
+            local is_under_something = QueryRaycast(VecAdd(self.position, Vec(0, state_definition.npc_height, 0)), Vec(0, 1, 0), 10)
             local shadow_amount = 0
             if is_under_something then
                 shadow_amount = 0.5
