@@ -1,6 +1,6 @@
 sprite_weapons.registry.register_weapon({
-    key = "m16a2",
-    name = "M16A2",
+    key = "m16a3",
+    name = "M16A3",
     states = {
         idle = {
             total_frames = 1,

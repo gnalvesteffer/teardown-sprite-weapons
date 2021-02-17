@@ -1,6 +1,6 @@
 sprite_weapons.state = {
     weapons = {
-        ["m16a2"] = {
+        ["m16a3"] = {
             ammo = 30,
             reserve_ammo = 30 * 10
         },
@@ -9,7 +9,7 @@ sprite_weapons.state = {
             reserve_ammo = 25 * 10
         }
     },
-    equipped_weapon_key = "m16a2",
+    equipped_weapon_key = "m16a3",
     weapon_state = "idle",
     weapon_state_time = 0,
     last_fire_time = -1,
