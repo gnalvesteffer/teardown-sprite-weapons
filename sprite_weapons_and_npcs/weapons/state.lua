@@ -2,11 +2,11 @@ sprite_weapons.state = {
     weapons = {
         ["m16a2"] = {
             ammo = 30,
-            reserve_ammo = 30 * 5
+            reserve_ammo = 30 * 10
         },
         ["hk53"] = {
             ammo = 25,
-            reserve_ammo = 25 * 5
+            reserve_ammo = 25 * 10
         }
     },
     equipped_weapon_key = "m16a2",

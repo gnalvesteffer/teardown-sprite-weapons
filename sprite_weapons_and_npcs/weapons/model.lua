@@ -5,7 +5,8 @@ sprite_weapons.model.get_muzzle_position = function()
 end
 
 sprite_weapons.model.get_muzzle_direction = function()
-    return TransformToParentVec(GetCameraTransform(), Vec(0, sprite_weapons.model.get_recoil_climb(), -1))
+    --return TransformToParentVec(GetCameraTransform(), Vec(0, sprite_weapons.model.get_recoil_climb(), -1)) -- re-enable when it's possible to set a camera rotation offset
+    return TransformToParentVec(GetCameraTransform(), Vec(0, 0, -1))
 end
 
 sprite_weapons.model.get_recoil_climb = function()
@@ -149,8 +150,7 @@ sprite_weapons.model.update_movement_time = function(delta_time)
 end
 
 sprite_weapons.model.tick = function(delta_time)
-    -- disable weapon simulation if in vehicle
-    sprite_weapons.state.is_enabled = GetPlayerVehicle() == 0
+    sprite_weapons.state.is_enabled = GetPlayerVehicle() == 0 and GetPlayerHealth() > 0
     if not sprite_weapons.state.is_enabled then
         return
     end

@@ -53,8 +53,9 @@ sprite_npcs.ai_registry.register_ai({
                 end
             end
         else
+            npc.ai.next_fire_time = GetTime() + math.random() * 0.5
+
             -- after a few seconds, go back to idle
-            npc.ai.next_fire_time = GetTime() + math.random()
             if (npc.state == "aim" or npc.state == "aim_idle" or npc.state == "fire") and GetTime() - npc.ai.player_last_seen_time > 3 then
                 npc:set_state("idle")
             end

@@ -1,110 +1,293 @@
 <scene id_="1055849408" open_="true" version="0.5.5" shadowVolume="200 100 200">
 	<environment id_="184429568" template="sunny" skyboxrot="180"/>
-	<spawnpoint id_="117709840" pos="-0.9 0.0 2.7" rot="0.0 180.0 0.0"/>
-	<voxbox id_="362763904" open_="true" name="platform" pos="-5.0 0.0 -5.0" texture="1 0.5" size="100 1 100" color="0.43 0.43 0.43">
-		<voxbox id_="1993595776" pos="0.0 0.0 0.0" rot="0.0 0.0 90.0" texture="3 0.5" size="10 1 100" color="0.42 0.17 0.11"/>
-		<voxbox id_="70914280" pos="9.9 0.0 10.1" rot="0.0 180.0 90.0" texture="3 0.5" size="10 1 100" color="0.42 0.17 0.11"/>
-		<voxbox id_="1216553472" pos="9.9 0.0 10.1" rot="0.0 270.0 90.0" texture="3 0.5" size="10 1 100" color="0.42 0.17 0.11"/>
-		<voxbox id_="1192238080" open_="true" name="platform" pos="0.0 0.0 -10.0" rot="0.0 0.0 0.0" texture="1 0.5" size="100 1 100" color="0.43 0.43 0.43">
-			<voxbox id_="514816704" pos="0.0 0.0 0.0" rot="0.0 0.0 90.0" texture="3 0.5" size="10 1 100" color="0.42 0.17 0.11"/>
-			<voxbox id_="847497728" pos="0.0 0.0 0.0" rot="0.0 90.0 90.0" texture="3 0.5" size="10 1 100" color="0.42 0.17 0.11"/>
-			<voxbox id_="1688048256" pos="9.9 0.0 10.1" rot="0.0 180.0 90.0" texture="3 0.5" size="10 1 100" color="0.42 0.17 0.11"/>
-			<vox id_="209859072" pos="7.5 0.1 10.7" texture="1 .5"/>
-			<vox id_="1587772032" open_="true" pos="8.0 0.1 5.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25">
-				<vox id_="2033050752" pos="-1.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-				<vox id_="1705154176" pos="-2.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-				<vox id_="1358382080" open_="true" pos="0.0 1.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25">
-					<vox id_="235878464" pos="-1.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-					<vox id_="1709873024" pos="-2.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-					<vox id_="1268330112" open_="true" pos="0.0 1.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25">
-						<vox id_="1120471808" pos="-1.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-						<vox id_="1420776064" pos="-2.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-						<vox id_="671981632" open_="true" pos="0.0 1.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25">
-							<vox id_="74256816" pos="-1.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-							<vox id_="1455643392" pos="-2.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-						</vox>
-					</vox>
-				</vox>
-			</vox>
-			<vox id_="680698432" open_="true" pos="8.0 0.1 7.3" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25">
-				<vox id_="455699616" pos="-1.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-				<vox id_="67047420" pos="-2.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-				<vox id_="1570338432" open_="true" pos="0.0 1.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25">
-					<vox id_="1387416320" pos="-1.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-					<vox id_="1932512384" pos="-2.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-					<vox id_="1108346880" open_="true" pos="0.0 1.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25">
-						<vox id_="1968625024" pos="-1.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-						<vox id_="687186880" pos="-2.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-						<vox id_="1580103808" open_="true" pos="0.0 1.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25">
-							<vox id_="1693750272" pos="-1.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-							<vox id_="1497785600" pos="-2.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-						</vox>
-					</vox>
-				</vox>
-			</vox>
-			<vox id_="781171264" open_="true" pos="8.0 0.1 10.1" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25">
-				<vox id_="1935789440" pos="-1.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-				<vox id_="76419640" pos="-2.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-				<vox id_="1762894976" open_="true" pos="0.0 1.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25">
-					<vox id_="244267584" pos="-1.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-					<vox id_="325995968" pos="-2.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-					<vox id_="427779584" open_="true" pos="0.0 1.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25">
-						<vox id_="724413632" pos="-1.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-						<vox id_="615617216" pos="-2.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-						<vox id_="501970848" open_="true" pos="0.0 1.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25">
-							<vox id_="1822077568" pos="-1.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-							<vox id_="1315977600" pos="-2.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-						</vox>
-					</vox>
-				</vox>
-			</vox>
-			<vox id_="142221792" open_="true" pos="8.0 0.1 12.3" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25">
-				<vox id_="538869888" pos="-1.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-				<vox id_="445868608" pos="-2.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-				<vox id_="1862450176" open_="true" pos="0.0 1.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25">
-					<vox id_="1317353984" pos="-1.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-					<vox id_="1628013568" pos="-2.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-					<vox id_="65540" open_="true" pos="0.0 1.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25">
-						<vox id_="578390528" pos="-1.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-						<vox id_="1947783296" pos="-2.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-						<vox id_="1856158336" open_="true" pos="0.0 1.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25">
-							<vox id_="562267648" pos="-1.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-							<vox id_="256195856" pos="-2.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-						</vox>
-					</vox>
-				</vox>
-			</vox>
-			<vox id_="533102368" open_="true" pos="5.2 0.1 16.8" rot="0.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25">
-				<vox id_="238893296" open_="true" pos="-1.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25">
-					<vox id_="850840256" open_="true" pos="0.0 1.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25">
-						<vox id_="1229726976" open_="true" pos="2.0 -1.0 0.0" rot="0.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25">
-							<vox id_="2052581760" pos="0.0 0.2 0.0" rot="0.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-						</vox>
-					</vox>
-				</vox>
-				<vox id_="88347920" open_="true" pos="-2.0 0.0 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25">
-					<vox id_="530284128" pos="0.0 0.5 0.0" texture="1 .5" file="MOD/vox/wood wall.vox" scale="0.25"/>
-				</vox>
-			</vox>
-		</voxbox>
-		<voxbox id_="1188895616" open_="true" strength=".5" size="30 50 3" brush="MOD/vox/wall wall thin.vox">
-			<voxbox id_="1934740736" open_="true" pos="0.0 0.0 -3.6" size="30 50 3" brush="MOD/vox/wall wall thin.vox">
-				<voxbox id_="1304377088" pos="0.0 0.0 -3.2" size="30 50 3" brush="MOD/vox/wall wall thin.vox"/>
-			</voxbox>
-		</voxbox>
-	</voxbox>
-	<group id_="939843584" open_="true" name="npc spawns" pos="-2.6 -0.1 -6.6">
-		<location id_="2075127424" name="npc_spawn_test" tags="npc_spawn_test" pos="3.9 0.3 -7.1"/>
-		<location id_="771143616" name="npc_spawn_test" tags="npc_spawn_test" pos="0.4 0.3 5.5"/>
-		<location id_="88544544" name="npc_spawn_test" tags="npc_spawn_test" pos="1.9 0.2 0.5" rot="0.0 0.0 0.0"/>
-		<location id_="743616832" name="npc_spawn_test" tags="npc_spawn_test" pos="4.5 0.2 2.9" rot="0.0 0.0 0.0"/>
-		<location id_="1463377152" name="npc_spawn_test" tags="npc_spawn_test" pos="-0.3 0.2 0.0" rot="0.0 0.0 0.0"/>
-		<location id_="1595047040" name="npc_spawn_test" tags="npc_spawn_test" pos="4.8 0.2 -4.4" rot="0.0 0.0 0.0"/>
-		<location id_="2060053248" name="npc_spawn_test" tags="npc_spawn_test" pos="5.5 0.2 0.9" rot="0.0 0.0 0.0"/>
-		<location id_="1458068352" name="npc_spawn_test" tags="npc_spawn_test" pos="4.0 0.2 0.1" rot="0.0 0.0 0.0"/>
-		<location id_="187313312" name="npc_spawn_test" tags="npc_spawn_test" pos="-0.8 0.2 -6.1" rot="0.0 0.0 0.0"/>
+	<spawnpoint id_="117709840" pos="36.8 0.1 13.9" rot="0.0 -90.0 0.0"/>
+	<group id_="939843584" open_="true" name="npc spawns" pos="0.0 0.0 0.0">
+		<location id_="187313312" name="npc_spawn_test" tags="npc_spawn_test" pos="18.6 0.1 19.9" rot="0.0 0.0 0.0"/>
+		<location id_="1415336320" name="npc_spawn_test" tags="npc_spawn_test" pos="20.8 2.7 17.9" rot="0.0 0.0 0.0"/>
+		<location id_="798080576" name="npc_spawn_test" tags="npc_spawn_test" pos="26.3 2.7 21.9" rot="0.0 0.0 0.0"/>
+		<location id_="1677955072" name="npc_spawn_test" tags="npc_spawn_test" pos="23.6 0.1 19.7" rot="0.0 0.0 0.0"/>
+		<location id_="1284911744" name="npc_spawn_test" tags="npc_spawn_test" pos="27.3 0.1 21.9" rot="0.0 0.0 0.0"/>
+		<location id_="2027479936" name="npc_spawn_test" tags="npc_spawn_test" pos="27.8 0.1 24.4" rot="0.0 0.0 0.0"/>
+		<location id_="1772267136" name="npc_spawn_test" tags="npc_spawn_test" pos="23.0 0.1 25.7" rot="0.0 0.0 0.0"/>
+		<location id_="1557033728" name="npc_spawn_test" tags="npc_spawn_test" pos="13.8 0.1 29.9" rot="0.0 0.0 0.0"/>
+		<location id_="1972688512" name="npc_spawn_test" tags="npc_spawn_test" pos="21.1 0.1 32.1" rot="0.0 0.0 0.0"/>
+		<location id_="907335744" name="npc_spawn_test" tags="npc_spawn_test" pos="19.3 0.1 32.2" rot="0.0 0.0 0.0"/>
+		<location id_="401104800" name="npc_spawn_test" tags="npc_spawn_test" pos="11.4 0.1 35.2" rot="0.0 0.0 0.0"/>
+		<location id_="1926613888" name="npc_spawn_test" tags="npc_spawn_test" pos="19.0 0.1 39.4" rot="0.0 0.0 0.0"/>
+		<location id_="728214912" name="npc_spawn_test" tags="npc_spawn_test" pos="13.4 0.1 37.2" rot="0.0 0.0 0.0"/>
+		<location id_="1073283072" name="npc_spawn_test" tags="npc_spawn_test" pos="11.2 0.1 39.2" rot="0.0 0.0 0.0"/>
+		<location id_="1901446528" name="npc_spawn_test" tags="npc_spawn_test" pos="13.0 0.1 41.5" rot="0.0 0.0 0.0"/>
+		<location id_="496924288" name="npc_spawn_test" tags="npc_spawn_test" pos="12.9 0.1 42.8" rot="0.0 0.0 0.0"/>
+		<location id_="2030887936" name="npc_spawn_test" tags="npc_spawn_test" pos="13.2 0.1 45.2" rot="0.0 0.0 0.0"/>
+		<location id_="1125977216" name="npc_spawn_test" tags="npc_spawn_test" pos="13.1 0.1 43.9" rot="0.0 0.0 0.0"/>
+		<location id_="491681088" name="npc_spawn_test" tags="npc_spawn_test" pos="20.9 0.1 42.9" rot="0.0 0.0 0.0"/>
+		<location id_="477458912" name="npc_spawn_test" tags="npc_spawn_test" pos="17.2 2.8 22.7" rot="0.0 0.0 0.0"/>
+		<location id_="563775104" name="npc_spawn_test" tags="npc_spawn_test" pos="17.7 0.1 39.6" rot="0.0 0.0 0.0"/>
+		<location id_="2089349632" name="npc_spawn_test" tags="npc_spawn_test" pos="23.6 5.5 22.0" rot="0.0 0.0 0.0"/>
+		<location id_="1204756224" name="npc_spawn_test" tags="npc_spawn_test" pos="17.1 5.5 22.3" rot="0.0 0.0 0.0"/>
+		<location id_="1631749376" name="npc_spawn_test" tags="npc_spawn_test" pos="20.2 5.4 22.3" rot="0.0 0.0 0.0"/>
+		<location id_="916707968" name="npc_spawn_test" tags="npc_spawn_test" pos="10.1 0.1 29.3" rot="0.0 0.0 0.0"/>
 	</group>
 	<script id_="1653377536" file="MOD/sprite_weapons_and_npcs/init.lua"/>
+	<voxbox id_="1148195200" name="ground" pos="-100.0 0.0 -100.0" texture="1" size="2000 1 2000" color="0.55 0.46 0.39"/>
+	<group id_="871681984" open_="true" name="building" pos="4.8 0.0 11.8">
+		<group id_="1744412672" open_="true" name="outer walls">
+			<vox id_="1105659776" pos="19.2 0.1 5.0" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="50138100" pos="12.6 0.1 5.0" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/bricks-window.vox" scale=".5"/>
+			<vox id_="1864023168" pos="22.5 0.1 5.0" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="535920576" pos="15.9 0.1 5.0" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/bricks-rubble.vox" scale=".5"/>
+			<vox id_="2010177280" pos="12.6 2.6 5.0" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="333401984" pos="15.9 2.6 5.0" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/bricks-window.vox" scale=".5"/>
+			<vox id_="1739103872" pos="19.2 2.6 5.0" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/bricks-door.vox" scale=".5"/>
+			<vox id_="102111320" pos="22.5 2.7 5.0" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1866644736" pos="24.1 0.1 6.6" rot="0.0 -90.0 0.0" texture="10" file="MOD/vox/bricks-door.vox" scale=".5"/>
+			<vox id_="936304448" pos="24.1 0.1 9.9" rot="0.0 -90.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1130761600" pos="22.5 0.1 11.5" rot="0.0 -180.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1869987328" pos="19.2 0.1 11.5" rot="0.0 -180.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="815841920" pos="12.6 0.1 11.5" rot="0.0 -180.0 0.0" texture="10" file="MOD/vox/bricks-door.vox" scale=".5"/>
+			<vox id_="981330432" pos="11.0 0.1 9.9" rot="0.0 90.0 0.0" texture="10" file="MOD/vox/bricks-window.vox" scale=".5"/>
+			<vox id_="804110272" pos="11.0 0.1 6.59999" rot="0.0 90.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1596554368" pos="11.0 2.7 6.59999" rot="0.0 90.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="109255184" pos="11.0 2.7 9.9" rot="0.0 90.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1654819456" pos="12.6 2.7 11.5" rot="0.0 -180.0 0.0" texture="10" file="MOD/vox/bricks-window.vox" scale=".5"/>
+			<vox id_="747811392" pos="19.2 2.7 11.5" rot="0.0 -180.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1161696512" pos="22.5 2.7 11.5" rot="0.0 -180.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1523018496" pos="24.1 2.7 9.9" rot="0.0 -90.0 0.0" texture="10" file="MOD/vox/bricks-window.vox" scale=".5"/>
+			<vox id_="1954664960" pos="24.1 2.7 6.6" rot="0.0 -90.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1384139264" pos="25.8 0.1 5.0" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1421693696" pos="27.4 0.1 6.6" rot="0.0 -90.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="2015289472" pos="29.1 0.0 6.6" rot="9.9 -170.10001 1.7" texture="10" file="MOD/vox/bricks-rubble.vox" scale=".5"/>
+			<vox id_="1030550976" pos="35.6 -0.1 6.3" rot="10.0 10.0 0.0" texture="10" file="MOD/vox/bricks-rubble.vox" scale=".5"/>
+			<vox id_="2080698368" pos="37.5 0.1 5.0" rot="9.9 -99.9 -1.7" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="943972608" pos="37.3 0.1 1.7" rot="-10.0 -90.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1536257536" pos="37.3 0.1 -1.6" rot="0.0 -90.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="2077486976" pos="27.4 0.1 9.9" rot="0.0 -90.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="59182620" pos="27.4 0.1 13.2" rot="0.0 -90.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="803061632" pos="25.8 0.1 14.8" rot="0.0 -180.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="555910272" pos="15.9 0.1 11.5" rot="0.0 -180.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1917241600" pos="17.5 0.1 16.5" rot="0.0 -90.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="735686528" pos="17.5 0.1 23.0" rot="0.0 -90.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1922550400" pos="17.5 0.1 19.7" rot="0.0 -90.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="335499264" pos="9.3 0.1 11.5" rot="0.0 -180.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1189223296" pos="6.0 0.1 11.5" rot="0.0 -180.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1131941376" pos="4.3 0.1 13.3" rot="0.0 -90.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1496212608" pos="4.3 0.1 16.6" rot="0.0 -90.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="134619168" pos="4.3 0.1 19.8" rot="0.0 -90.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="415261440" pos="4.2 0.1 21.0" rot="0.0 -60.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1391807488" pos="15.9 2.7 11.5" rot="0.0 -180.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1084949120" pos="22.5 0.1 14.8" rot="0.0 -180.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1264856448" pos="19.2 0.1 14.8" rot="0.0 -180.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1082589696" pos="5.0 0.1 24.0" rot="0.0 -90.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1131285888" pos="5.0 0.1 27.3" rot="0.0 -90.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="788118528" pos="5.0 0.1 33.9" rot="0.0 -90.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1086718720" pos="5.0 0.1 30.6" rot="0.0 -90.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="365123328" pos="10.0 0.1 35.6" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="391404864" pos="6.69999 0.1 35.6" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1482711424" pos="16.5 0.1 35.0" rot="0.0 20.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="304957632" pos="13.29999 0.1 35.6" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="389307584" pos="17.5 0.1 26.3" rot="0.0 -90.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="438069376" pos="17.5 0.1 29.6" rot="0.0 -90.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1245063424" pos="17.5 0.1 32.9" rot="0.0 -90.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1547399424" pos="6.0 0.1 16.6" rot="0.0 -180.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="798604928" pos="9.3 0.1 16.6" rot="0.0 -180.0 0.0" texture="10" file="MOD/vox/bricks-rubble.vox" scale=".5"/>
+			<vox id_="1880473728" pos="32.4 0.1 -3.2" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1404849920" pos="35.7 0.1 -3.2" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="2056448640" pos="29.19999 0.1 -3.20001" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1784588672" pos="25.9 0.1 -3.2" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="496203328" pos="22.6 0.1 -3.2" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="2086859136" pos="19.39999 0.1 -3.20001" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="990047232" pos="16.0 0.1 -3.2" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="805224448" pos="12.7 0.1 -3.2" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="992013440" pos="16.0 0.1 -3.2" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="885314304" pos="12.7 0.1 -3.2" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1911932928" pos="11.1 0.1 0.1" rot="0.0 -90.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="81138520" pos="11.1 0.1 -3.2" rot="0.0 -90.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+			<vox id_="1673039616" pos="11.1 0.1 3.4" rot="0.0 -90.0 0.0" texture="10" file="MOD/vox/bricks.vox" scale=".5"/>
+		</group>
+		<group id_="67637280" open_="true" name="roof">
+			<vox id_="9831000" pos="15.9 5.2 6.6" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/roof.vox" scale=".5"/>
+			<vox id_="378231328" pos="12.6 5.2 6.6" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/roof.vox" scale=".5"/>
+			<vox id_="632526528" pos="22.5 5.2 6.6" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/roof.vox" scale=".5"/>
+			<vox id_="1705285248" pos="19.2 5.2 6.6" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/roof.vox" scale=".5"/>
+			<vox id_="649370304" pos="12.6 5.2 9.9" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/roof.vox" scale=".5"/>
+			<vox id_="287196288" pos="15.9 5.2 9.9" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/roof.vox" scale=".5"/>
+			<vox id_="1223566208" pos="19.2 5.2 9.9" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/roof.vox" scale=".5"/>
+			<vox id_="852413248" pos="22.5 5.2 9.9" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/roof.vox" scale=".5"/>
+			<vox id_="1636926976" pos="19.2 2.5 6.6" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/roof.vox" scale=".5"/>
+			<vox id_="1347633536" pos="22.5 2.5 6.6" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/roof.vox" scale=".5"/>
+			<vox id_="1894237056" pos="22.5 2.5 9.9" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/roof.vox" scale=".5"/>
+			<vox id_="813154752" pos="15.9 2.5 6.6" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/roof.vox" scale=".5"/>
+			<vox id_="741388480" pos="12.6 2.5 9.9" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/roof.vox" scale=".5"/>
+			<vox id_="126557744" pos="12.6 2.5 6.6" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/roof.vox" scale=".5"/>
+		</group>
+		<group id_="1778427904" open_="true" name="stairs">
+			<vox id_="1571583616" pos="20.6 0.1 3.7" rot="0.0 -180.0 0.0" texture="10" file="MOD/vox/stairs.vox" scale=".5"/>
+			<vox id_="1482973568" pos="19.3 0.1 9.5" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/stairs.vox" scale=".5"/>
+			<vox id_="1348813184" pos="19.3 0.1 10.4" rot="0.0 0.0 0.0" texture="10" file="MOD/vox/stairs.vox" scale=".5"/>
+			<vox id_="1254501120" pos="17.0 2.7 3.7" rot="0.0 -180.0 0.0" texture="10" file="MOD/vox/stairs.vox" scale=".5"/>
+			<vox id_="714451520" pos="17.0 2.7 3.7" rot="180.0 0.0 0.0" texture="10" file="MOD/vox/stairs.vox" scale=".5"/>
+		</group>
+		<group id_="202846304" open_="true" name="inner walls">
+			<vox id_="1863629952" pos="16.3 0.1 22.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="531267232" pos="16.3 2.1 22.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="286999648" pos="14.3 2.1 22.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="625317120" pos="14.3 0.1 22.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1967379712" pos="10.3 2.1 22.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1463770368" pos="10.3 0.1 22.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="899405440" pos="12.3 2.1 22.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1418744320" pos="6.3 2.1 22.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="187378864" pos="6.3 0.1 22.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1467964928" pos="8.3 2.1 22.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="977135872" pos="8.3 0.1 22.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="888001472" pos="12.3 0.1 24.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="2072309248" pos="12.3 2.1 24.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="327306752" pos="10.3 0.1 24.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1897186432" pos="10.3 2.1 24.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="334385088" pos="6.3 0.1 24.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="899274368" pos="6.3 2.1 24.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="4063480" pos="8.3 0.1 24.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1657899776" pos="8.3 2.1 24.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="357389632" pos="5.5 2.1 23.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1993267968" pos="5.5 0.1 23.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="958129280" pos="17.2 2.1 23.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1988024832" pos="17.2 0.1 23.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="997191104" pos="14.3 0.1 24.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="27002480" pos="14.3 2.1 24.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="456223936" pos="17.2 2.1 25.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="257572192" pos="17.2 0.1 25.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1321810688" pos="5.5 2.1 25.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1689490176" pos="5.5 0.1 25.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="32966620" pos="17.2 2.1 29.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1334590976" pos="17.2 0.1 29.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="780188160" pos="5.5 2.1 29.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1795140608" pos="5.5 0.1 29.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1478713472" pos="17.2 2.1 27.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1557164800" pos="17.2 0.1 27.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="245840544" pos="5.5 0.1 27.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="217396176" pos="5.5 2.1 27.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="442132832" pos="17.2 2.1 33.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1822798464" pos="17.2 0.1 33.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="42273300" pos="17.2 0.1 31.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="315837248" pos="17.2 2.1 31.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1133186560" pos="5.5 2.1 33.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1177557120" pos="5.5 0.1 33.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="316099424" pos="5.5 2.1 31.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="910678272" pos="5.5 0.1 31.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1337147136" pos="16.3 0.1 34.5" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1776330624" pos="16.3 2.1 34.5" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="729591296" pos="14.3 2.1 34.5" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="212611760" pos="14.3 0.1 34.5" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="867618496" pos="12.3 2.1 34.5" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1757192960" pos="10.3 2.1 34.5" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1836299776" pos="10.3 0.1 34.5" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1298675072" pos="8.3 2.1 34.5" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="384523168" pos="8.3 0.1 34.5" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="589532288" pos="6.3 2.1 34.5" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="358765952" pos="6.3 0.1 34.5" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1346846976" pos="12.3 0.1 34.5" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="124001680" pos="9.5 -0.4 25.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1569551872" pos="9.5 2.6 25.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="97916760" pos="13.5 0.1 27.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="810533184" pos="13.5 2.1 27.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="74453440" pos="14.3 0.1 28.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1829286912" pos="14.3 2.1 28.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="557024448" pos="12.3 2.1 28.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1141772288" pos="12.3 0.1 28.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1104480128" pos="10.3 2.1 28.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1748017280" pos="10.3 0.1 28.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1576761344" pos="8.3 2.1 28.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="708094144" pos="8.3 0.1 28.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1143345280" pos="6.3 2.1 28.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="553944064" pos="16.3 4.1 22.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1651149184" pos="14.3 4.1 22.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1779476480" pos="12.3 4.1 22.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1330724096" pos="10.3 4.1 22.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1273180032" pos="8.3 4.1 22.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="777763200" pos="6.3 4.1 22.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="651336512" pos="5.5 4.1 23.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="611750336" pos="5.5 4.1 25.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1650297216" pos="5.5 4.1 27.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="6816160" pos="5.5 4.1 29.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1786751488" pos="5.5 4.1 31.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1027273984" pos="5.5 4.1 33.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="956359680" pos="8.3 4.1 34.5" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="888394688" pos="6.3 4.1 34.5" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1371293440" pos="10.3 4.1 34.5" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1848621184" pos="12.3 4.1 34.5" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="308496768" pos="14.3 4.1 34.5" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="55381300" pos="16.3 4.1 34.5" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="2036589952" pos="17.2 4.1 33.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1482252672" pos="17.2 4.1 31.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1690604288" pos="17.2 4.1 29.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1020130112" pos="17.2 4.1 27.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="289359104" pos="17.2 4.1 25.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1088881536" pos="17.2 4.1 23.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="585862080" pos="14.3 4.1 24.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="35850380" pos="12.3 4.1 24.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="202780768" pos="10.3 4.1 24.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="287130752" pos="8.3 4.1 24.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="207040864" pos="6.3 4.1 24.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1659538304" pos="6.3 4.1 28.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="283329408" pos="8.3 4.1 28.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="311642688" pos="10.3 4.1 28.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1218060928" pos="12.3 4.1 28.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="461073888" pos="14.3 4.1 28.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="702523264" pos="7.5 0.1 27.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="537690176" pos="7.5 2.1 27.4" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1077149952" pos="16.3 2.1 28.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="127868544" pos="16.3 4.1 28.4" rot="0.0 0.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="47057720" pos="13.5 2.6 29.5" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1836496384" pos="13.5 -0.4 29.5" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1619100160" pos="13.5 2.6 33.5" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1290810240" pos="13.5 -0.4 33.5" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1675923328" pos="13.5 2.6 31.5" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="1790290688" pos="13.5 -0.4 31.5" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="263995120" pos="9.5 1.2 29.5" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="2080174080" pos="9.5 1.2 31.5" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+			<vox id_="842647808" pos="9.5 1.2 33.5" rot="0.0 -90.0 0.0" texture="3" file="MOD/vox/wood wall.vox" scale=".5"/>
+		</group>
+	</group>
+	<boundary id_="1657637632">
+		<vertex pos="15.4 8.7"/>
+		<vertex pos="42.5 7.6"/>
+		<vertex pos="42.8 19.3"/>
+		<vertex pos="32.5 19.2"/>
+		<vertex pos="32.7 27.2"/>
+		<vertex pos="22.6 26.9"/>
+		<vertex pos="22.8 48.2"/>
+		<vertex pos="9.1 48.6"/>
+		<vertex pos="9.5 34.1"/>
+		<vertex pos="8.4 33.0"/>
+		<vertex pos="8.8 23.1"/>
+		<vertex pos="15.5 23.0"/>
+	</boundary>
+	<group id_="1317616128" open_="true" name="props">
+		<vox id_="2145845120" pos="19.1 0.1 33.7" rot="0.0 0.0 0.0" texture="6" file="MOD/vox/sandbags.vox" scale=".5"/>
+		<vox id_="929029504" pos="20.9 0.1 33.7" rot="0.0 0.0 0.0" texture="6" file="MOD/vox/sandbags.vox" scale=".5"/>
+		<vox id_="1341931520" pos="13.2 0.1 33.7" rot="0.0 0.0 0.0" texture="6" file="MOD/vox/sandbags.vox" scale=".5"/>
+		<vox id_="1684902272" pos="15.0 0.1 33.7" rot="0.0 0.0 0.0" texture="6" file="MOD/vox/sandbags.vox" scale=".5"/>
+		<vox id_="2020925952" pos="9.5 0.1 33.7" rot="0.0 0.0 0.0" texture="6" file="MOD/vox/sandbags.vox" scale=".5"/>
+		<vox id_="924310592" pos="11.3 0.1 33.7" rot="0.0 0.0 0.0" texture="6" file="MOD/vox/sandbags.vox" scale=".5"/>
+		<vox id_="1593605120" pos="19.1 0.1 30.5" rot="0.0 30.0 0.0" texture="6" file="MOD/vox/sandbags.vox" scale=".5"/>
+		<vox id_="1864416384" pos="20.9 0.1 30.4" rot="0.0 -30.0 0.0" texture="6" file="MOD/vox/sandbags.vox" scale=".5"/>
+		<vox id_="1628603520" pos="16.8 5.4 16.9" rot="0.0 0.0 0.0" texture="6" file="MOD/vox/sandbags.vox" scale=".5"/>
+		<vox id_="640129152" pos="18.8 5.4 16.9" rot="0.0 0.0 0.0" texture="6" file="MOD/vox/sandbags.vox" scale=".5"/>
+		<vox id_="1974130304" pos="23.2 5.4 16.9" rot="0.0 0.0 0.0" texture="6" file="MOD/vox/sandbags.vox" scale=".5"/>
+		<vox id_="28509900" pos="25.5 5.4 16.9" rot="0.0 0.0 0.0" texture="6" file="MOD/vox/sandbags.vox" scale=".5"/>
+		<vox id_="1522952960" pos="27.8 5.4 16.9" rot="0.0 0.0 0.0" texture="6" file="MOD/vox/sandbags.vox" scale=".5"/>
+		<vox id_="552895424" pos="28.7 5.4 18.2" rot="0.0 -90.0 0.0" texture="6" file="MOD/vox/sandbags.vox" scale=".5"/>
+		<vox id_="1431393536" pos="28.7 5.4 20.3" rot="0.0 -90.0 0.0" texture="6" file="MOD/vox/sandbags.vox" scale=".5"/>
+		<vox id_="766424768" pos="28.7 5.4 22.4" rot="0.0 -90.0 0.0" texture="6" file="MOD/vox/sandbags.vox" scale=".5"/>
+		<vox id_="442853792" pos="27.8 5.4 23.3" rot="0.0 0.0 0.0" texture="6" file="MOD/vox/sandbags.vox" scale=".5"/>
+		<vox id_="1231627648" pos="25.5 5.4 23.3" rot="0.0 0.0 0.0" texture="6" file="MOD/vox/sandbags.vox" scale=".5"/>
+		<vox id_="1923992192" pos="23.2 5.4 23.3" rot="0.0 0.0 0.0" texture="6" file="MOD/vox/sandbags.vox" scale=".5"/>
+		<vox id_="1470717568" pos="20.9 5.4 23.3" rot="0.0 0.0 0.0" texture="6" file="MOD/vox/sandbags.vox" scale=".5"/>
+		<vox id_="994831680" pos="18.8 5.4 23.3" rot="0.0 0.0 0.0" texture="6" file="MOD/vox/sandbags.vox" scale=".5"/>
+		<vox id_="2043668224" pos="16.8 5.4 23.3" rot="0.0 0.0 0.0" texture="6" file="MOD/vox/sandbags.vox" scale=".5"/>
+		<vox id_="740339840" pos="15.9 5.4 22.4" rot="0.0 -90.0 0.0" texture="6" file="MOD/vox/sandbags.vox" scale=".5"/>
+		<vox id_="905238464" pos="15.9 5.4 20.3" rot="0.0 -90.0 0.0" texture="6" file="MOD/vox/sandbags.vox" scale=".5"/>
+		<vox id_="1948110976" pos="15.9 5.4 18.2" rot="0.0 -90.0 0.0" texture="6" file="MOD/vox/sandbags.vox" scale=".5"/>
+	</group>
 	<layers/>
 </scene>
 
