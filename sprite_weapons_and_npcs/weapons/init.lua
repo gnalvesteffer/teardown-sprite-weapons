@@ -5,6 +5,7 @@
 #include "weapons/state.lua"
 #include "weapons/model.lua"
 #include "weapons/view.lua"
+#include "weapons/hud.lua"
 #include "weapons/controller.lua"
 
 sprite_weapons.init = function()
@@ -14,6 +15,7 @@ sprite_weapons.tick = function(delta_time)
     sprite_weapons.controller.tick(delta_time)
     sprite_weapons.model.tick(delta_time)
     sprite_weapons.view.tick(delta_time)
+    sprite_weapons.hud.tick(delta_time)
 end
 
 sprite_weapons.draw = function()
@@ -21,4 +23,5 @@ sprite_weapons.draw = function()
         preloader.preload_images() -- preloading reduces slowdown ingame, but results in longer load times at the start
     end
     sprite_weapons.view.draw()
+    sprite_weapons.hud.draw()
 end

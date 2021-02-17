@@ -16,7 +16,11 @@ end
 
 sprite_weapons.model.get_recoil_dispersion = function()
     local weapon_definition = sprite_weapons.state.get_current_weapon_definition()
-    return math.clamp(sprite_weapons.state.firing_duration * weapon_definition.recoil_dispersion_rate, 0, weapon_definition.recoil_max_dispersion)
+    local dispersion_scale = 1
+    if sprite_weapons.model.is_in_aiming_state() then -- aiming reduces dispersion (gives better control/accuracy)
+        dispersion_scale = 0.25
+    end
+    return math.clamp(sprite_weapons.state.firing_duration * weapon_definition.recoil_dispersion_rate, 0, weapon_definition.recoil_max_dispersion) * dispersion_scale
 end
 
 sprite_weapons.model.get_random_weapon_state_sound = function(weapon_state)
