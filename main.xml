@@ -2,31 +2,31 @@
 	<environment id_="184429568" template="sunny" skyboxrot="180"/>
 	<spawnpoint id_="117709840" pos="36.8 0.1 13.9" rot="0.0 -90.0 0.0"/>
 	<group id_="939843584" open_="true" name="npc spawns" pos="0.0 0.0 0.0">
-		<location id_="187313312" name="npc_spawn_test" tags="npc_spawn_test" pos="18.6 0.1 19.9" rot="0.0 0.0 0.0"/>
+		<location id_="187313312" name="npc_spawn_test" tags="npc_spawn_test" pos="18.6 0.1 19.9" rot="0.0 160.0 0.0"/>
 		<location id_="1415336320" name="npc_spawn_test" tags="npc_spawn_test" pos="20.8 2.7 17.9" rot="0.0 0.0 0.0"/>
 		<location id_="798080576" name="npc_spawn_test" tags="npc_spawn_test" pos="26.3 2.7 21.9" rot="0.0 0.0 0.0"/>
-		<location id_="1677955072" name="npc_spawn_test" tags="npc_spawn_test" pos="23.6 0.1 19.7" rot="0.0 0.0 0.0"/>
+		<location id_="1677955072" name="npc_spawn_test" tags="npc_spawn_test" pos="23.6 0.1 19.7" rot="0.0 -90.0 0.0"/>
 		<location id_="1284911744" name="npc_spawn_test" tags="npc_spawn_test" pos="27.3 0.1 21.9" rot="0.0 0.0 0.0"/>
-		<location id_="2027479936" name="npc_spawn_test" tags="npc_spawn_test" pos="27.8 0.1 24.4" rot="0.0 0.0 0.0"/>
-		<location id_="1772267136" name="npc_spawn_test" tags="npc_spawn_test" pos="23.0 0.1 25.7" rot="0.0 0.0 0.0"/>
-		<location id_="1557033728" name="npc_spawn_test" tags="npc_spawn_test" pos="13.8 0.1 29.9" rot="0.0 0.0 0.0"/>
+		<location id_="2027479936" name="npc_spawn_test" tags="npc_spawn_test" pos="27.8 0.1 24.4" rot="0.0 -90.0 0.0"/>
+		<location id_="1772267136" name="npc_spawn_test" tags="npc_spawn_test" pos="23.0 0.1 25.7" rot="0.0 80.0 0.0"/>
+		<location id_="1557033728" name="npc_spawn_test" tags="npc_spawn_test" pos="13.8 0.1 29.9" rot="0.0 -30.0 0.0"/>
 		<location id_="1972688512" name="npc_spawn_test" tags="npc_spawn_test" pos="21.1 0.1 32.1" rot="0.0 0.0 0.0"/>
 		<location id_="907335744" name="npc_spawn_test" tags="npc_spawn_test" pos="19.3 0.1 32.2" rot="0.0 0.0 0.0"/>
 		<location id_="401104800" name="npc_spawn_test" tags="npc_spawn_test" pos="11.4 0.1 35.2" rot="0.0 0.0 0.0"/>
-		<location id_="1926613888" name="npc_spawn_test" tags="npc_spawn_test" pos="19.0 0.1 39.4" rot="0.0 0.0 0.0"/>
-		<location id_="728214912" name="npc_spawn_test" tags="npc_spawn_test" pos="13.4 0.1 37.2" rot="0.0 0.0 0.0"/>
+		<location id_="1926613888" name="npc_spawn_test" tags="npc_spawn_test" pos="19.0 0.1 39.4" rot="0.0 -20.0 0.0"/>
+		<location id_="728214912" name="npc_spawn_test" tags="npc_spawn_test" pos="13.4 0.1 37.2" rot="0.0 -90.0 0.0"/>
 		<location id_="1073283072" name="npc_spawn_test" tags="npc_spawn_test" pos="11.2 0.1 39.2" rot="0.0 0.0 0.0"/>
-		<location id_="1901446528" name="npc_spawn_test" tags="npc_spawn_test" pos="13.0 0.1 41.5" rot="0.0 0.0 0.0"/>
-		<location id_="496924288" name="npc_spawn_test" tags="npc_spawn_test" pos="12.9 0.1 42.8" rot="0.0 0.0 0.0"/>
-		<location id_="2030887936" name="npc_spawn_test" tags="npc_spawn_test" pos="13.2 0.1 45.2" rot="0.0 0.0 0.0"/>
-		<location id_="1125977216" name="npc_spawn_test" tags="npc_spawn_test" pos="13.1 0.1 43.9" rot="0.0 0.0 0.0"/>
+		<location id_="1901446528" name="npc_spawn_test" tags="npc_spawn_test" pos="13.0 0.1 41.5" rot="0.0 50.0 0.0"/>
+		<location id_="496924288" name="npc_spawn_test" tags="npc_spawn_test" pos="12.9 0.1 42.8" rot="0.0 30.0 0.0"/>
+		<location id_="2030887936" name="npc_spawn_test" tags="npc_spawn_test" pos="13.2 0.1 45.2" rot="0.0 30.0 0.0"/>
+		<location id_="1125977216" name="npc_spawn_test" tags="npc_spawn_test" pos="13.1 0.1 43.9" rot="0.0 30.0 0.0"/>
 		<location id_="491681088" name="npc_spawn_test" tags="npc_spawn_test" pos="20.9 0.1 42.9" rot="0.0 0.0 0.0"/>
 		<location id_="477458912" name="npc_spawn_test" tags="npc_spawn_test" pos="17.2 2.8 22.7" rot="0.0 0.0 0.0"/>
 		<location id_="563775104" name="npc_spawn_test" tags="npc_spawn_test" pos="17.7 0.1 39.6" rot="0.0 0.0 0.0"/>
-		<location id_="2089349632" name="npc_spawn_test" tags="npc_spawn_test" pos="23.6 5.5 22.0" rot="0.0 0.0 0.0"/>
-		<location id_="1204756224" name="npc_spawn_test" tags="npc_spawn_test" pos="17.1 5.5 22.3" rot="0.0 0.0 0.0"/>
-		<location id_="1631749376" name="npc_spawn_test" tags="npc_spawn_test" pos="20.2 5.4 22.3" rot="0.0 0.0 0.0"/>
-		<location id_="916707968" name="npc_spawn_test" tags="npc_spawn_test" pos="10.1 0.1 29.3" rot="0.0 0.0 0.0"/>
+		<location id_="2089349632" name="npc_spawn_test" tags="npc_spawn_test" pos="23.6 5.5 22.0" rot="0.0 -150.0 0.0"/>
+		<location id_="1204756224" name="npc_spawn_test" tags="npc_spawn_test" pos="17.1 5.5 22.3" rot="0.0 110.0 0.0"/>
+		<location id_="1631749376" name="npc_spawn_test" tags="npc_spawn_test" pos="20.2 5.4 22.3" rot="0.0 180.0 0.0"/>
+		<location id_="916707968" name="npc_spawn_test" tags="npc_spawn_test" pos="10.1 0.1 29.3" rot="0.0 -90.0 0.0"/>
 	</group>
 	<script id_="1653377536" file="MOD/sprite_weapons_and_npcs/init.lua"/>
 	<voxbox id_="1148195200" name="ground" pos="-100.0 0.0 -100.0" texture="1" size="2000 1 2000" color="0.55 0.46 0.39"/>
