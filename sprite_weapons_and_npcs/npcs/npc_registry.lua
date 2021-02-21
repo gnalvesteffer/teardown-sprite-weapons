@@ -25,7 +25,7 @@ end
 
 local function build_state_definition(definition, state_key, animation_mode)
     local state_definition = {
-        sounds = load_sounds(definition.key, state_key, definition.states.aim.total_sounds),
+        sounds = load_sounds(definition.key, state_key, definition.states[state_key].total_sounds),
         headings = {}
     }
 
