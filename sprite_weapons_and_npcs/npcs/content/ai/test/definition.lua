@@ -1,5 +1,5 @@
 local function can_npc_see_player(npc)
-    local npc_height = npc:get_current_state_definition().npc_height
+    local npc_height = npc:get_current_heading_definition().npc_height
     local npc_eye_position = VecAdd(npc.position, Vec(0, npc_height * 0.9, 0)) -- assume the npc's eyes are near the top of the sprite
     local player_eye_position = GetCameraTransform().pos
     local npc_direction = VecNormalize(VecSub(player_eye_position, npc_eye_position))
@@ -22,7 +22,7 @@ sprite_npcs.ai_registry.register_ai({
             fire = function(npc)
                 npc:set_state("fire", true)
                 npc.ai.next_fire_time = GetTime() + math.max(math.random() * 2, 0.05)
-                SetPlayerHealth(GetPlayerHealth() - 0.2)
+                --SetPlayerHealth(GetPlayerHealth() - 0.2)
             end
         }
     end,
@@ -31,7 +31,7 @@ sprite_npcs.ai_registry.register_ai({
             return
         end
 
-        local state_definition = npc:get_current_state_definition()
+        local state_definition = npc:get_current_heading_definition()
         if can_npc_see_player(npc) then
             npc.ai.player_last_seen_time = GetTime()
 

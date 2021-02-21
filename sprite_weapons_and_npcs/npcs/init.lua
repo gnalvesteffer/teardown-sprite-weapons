@@ -11,7 +11,7 @@ local function spawn_npcs_from_locations()
         for spawn_location_iterator = 1, #spawn_locations do
             local spawn_location = spawn_locations[spawn_location_iterator]
             local location_transform = GetLocationTransform(spawn_location)
-            local npc = sprite_npcs.npc.spawn(npc_key, location_transform.pos, QuatToEuler(location_transform.rot)[2] * math.rad_to_deg)
+            local npc = sprite_npcs.npc.spawn(npc_key, location_transform.pos, quat_to_euler(location_transform.rot)[2] * math.rad_to_deg)
         end
     end
 end

@@ -23,14 +23,13 @@ local function load_sounds(npc_key, sound_name, total_sounds)
     return sounds
 end
 
-local animation_headings = { 0, 45, 90, 135, 180, 225, 270, 315 }
 local function build_state_definition(definition, state_key, animation_mode)
     local state_definition = {
         sounds = load_sounds(definition.key, state_key, definition.states.aim.total_sounds),
         headings = {}
     }
 
-    for i, heading in ipairs(animation_headings) do
+    for heading, heading_definition in pairs(definition.states[state_key].headings) do
         state_definition.headings[heading] = {
             frames = build_frames(definition.key, state_key .. "-" .. tostring(heading), definition.states[state_key].headings[heading].total_frames, false),
             total_frames = definition.states[state_key].headings[heading].total_frames,
@@ -55,9 +54,9 @@ sprite_npcs.npc_registry.register_npc = function(definition)
         health = definition.health,
         ai_key = definition.ai_key,
         states = {
-            idle = build_state_definition(definition, "idle", "loop"),
+            idle = build_state_definition(definition, "idle", "pingpong"),
             aim = build_state_definition(definition, "aim", "oneshot"),
-            aim_idle = build_state_definition(definition, "aim_idle", "loop"),
+            aim_idle = build_state_definition(definition, "aim_idle", "pingpong"),
             fire = build_state_definition(definition, "fire", "oneshot"),
             hurt = build_state_definition(definition, "hurt", "oneshot"),
             dead = build_state_definition(definition, "dead", "oneshot"),

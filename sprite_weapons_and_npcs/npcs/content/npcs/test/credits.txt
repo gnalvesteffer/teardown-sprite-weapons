@@ -1,3 +1,6 @@
+Character sprites are made using assets from ArmA3 w/ mods and a green screen. 
+I take no credit for these except for creating the sprites.
+
 Sounds from:
 https://freesound.org/people/Far_Box_creature/packs/26573/
 https://freesound.org/people/micahlg/packs/23282/

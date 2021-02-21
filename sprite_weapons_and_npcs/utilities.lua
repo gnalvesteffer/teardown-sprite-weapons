@@ -10,7 +10,11 @@ function math.clamp(value, mi, ma)
     return value
 end
 
-function QuatToEuler(quat)
+function math.tri(i, m)
+    return m - math.abs(i % (2 * m) - m)
+end
+
+function quat_to_euler(quat)
     local x = quat[1]
     local y = quat[2]
     local z = quat[3]
@@ -21,6 +25,17 @@ function QuatToEuler(quat)
     return Vec(pitch, yaw, roll)
 end
 
-function StepifyAngle(angle, step_angle)
+function stepify_angle(angle, step_angle)
+    if step_angle == 0 then
+        return 0
+    end
     return math.floor(angle / step_angle) * step_angle % 360
+end
+
+function get_table_length(table)
+    local length = 0
+    for _ in pairs(table) do
+        length = length + 1
+    end
+    return length
 end

@@ -57,15 +57,20 @@ sprite_npcs.npc.spawn = function(npc_key, position, heading)
             else
                 if heading_definition.animation_mode == "oneshot" then
                     frame_number = math.min(math.floor(self.state_time * heading_definition.frame_rate) + 1, heading_definition.total_frames)
+                else
+                    if heading_definition.animation_mode == "pingpong" then
+                        frame_number = math.floor(math.tri((self.state_time + self.id) * heading_definition.frame_rate, heading_definition.total_frames)) + 1
+                    end
                 end
             end
             return heading_definition.frames[frame_number]
         end,
         get_draw_heading = function(self)
+            local total_headings = get_table_length(self:get_current_state_definition().headings);
+            local direction_angle_step = (360 / total_headings) % 360
             local direction_to_player = VecSub(self.position, GetCameraTransform().pos)
-            local heading_to_player = StepifyAngle((math.atan2(direction_to_player[1], direction_to_player[3]) * math.rad_to_deg) + (45 / 2), 45)
-            local camera_heading = StepifyAngle(QuatToEuler(GetCameraTransform().rot)[2] * math.rad_to_deg, 45)
-            local npc_heading = StepifyAngle(self.heading, 45)
+            local heading_to_player = stepify_angle((math.atan2(direction_to_player[1], direction_to_player[3]) * math.rad_to_deg) + (direction_angle_step / 2), direction_angle_step)
+            local npc_heading = stepify_angle(self.heading, direction_angle_step)
             local draw_heading = (heading_to_player - npc_heading) % 360
             return draw_heading
         end,
@@ -146,7 +151,7 @@ sprite_npcs.npc.spawn = function(npc_key, position, heading)
             local is_under_something = QueryRaycast(VecAdd(self.position, Vec(0, heading_definition.npc_height, 0)), Vec(0, 1, 0), 10)
             local shadow_amount = 0
             if is_under_something then
-                shadow_amount = 0.5
+                shadow_amount = 0.75
             end
             DrawSprite(self:get_current_frame(), transform, heading_definition.npc_width, heading_definition.npc_height, 1 - shadow_amount, 1 - shadow_amount, 1 - shadow_amount, 1, true)
         end,

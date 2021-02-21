@@ -8,7 +8,7 @@
 		<location id_="1677955072" name="npc_spawn_test" tags="npc_spawn_test" pos="23.6 0.1 19.7" rot="0.0 -90.0 0.0"/>
 		<location id_="1284911744" name="npc_spawn_test" tags="npc_spawn_test" pos="27.3 0.1 21.9" rot="0.0 0.0 0.0"/>
 		<location id_="2027479936" name="npc_spawn_test" tags="npc_spawn_test" pos="27.8 0.1 24.4" rot="0.0 -90.0 0.0"/>
-		<location id_="1772267136" name="npc_spawn_test" tags="npc_spawn_test" pos="23.0 0.1 25.7" rot="0.0 80.0 0.0"/>
+		<location id_="1772267136" name="npc_spawn_test" tags="npc_spawn_test" pos="23.0 0.1 25.7" rot="0.0 90.0 0.0"/>
 		<location id_="1557033728" name="npc_spawn_test" tags="npc_spawn_test" pos="13.8 0.1 29.9" rot="0.0 -30.0 0.0"/>
 		<location id_="1972688512" name="npc_spawn_test" tags="npc_spawn_test" pos="21.1 0.1 32.1" rot="0.0 0.0 0.0"/>
 		<location id_="907335744" name="npc_spawn_test" tags="npc_spawn_test" pos="19.3 0.1 32.2" rot="0.0 0.0 0.0"/>
